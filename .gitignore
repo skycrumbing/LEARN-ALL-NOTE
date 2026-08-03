@@ -1,0 +1,20 @@
+# ── 只跟踪 .md / .java / .gitignore 文件 ──
+
+# 忽略所有文件
+*
+
+# 恢复目录遍历（否则子目录里的.md/.java也看不到）
+!*/
+
+# 恢复 .gitignore
+!.gitignore
+
+# 只保留 .md 和 .java
+!*.md
+!*.java
+
+# 明确忽略 IDE 配置目录和文件
+.idea/
+*.iml
+*.class
+*.jar
