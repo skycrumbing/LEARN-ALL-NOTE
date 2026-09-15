@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="800" height="350" fill="#FAFBFC" rx="12"/>
+
+  <text x="400" y="35" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a2e">总距 (Collective Pitch)：控制升降</text>
+
+  <!-- 总距增大 -->
+  <g transform="translate(230,180)">
+    <text x="0" y="-115" text-anchor="middle" font-size="15" font-weight="bold" fill="#2ECC71">总距增大</text>
+    <text x="0" y="-98" text-anchor="middle" font-size="11" fill="#555">Collective Up</text>
+
+    <!-- 旋翼轴 -->
+    <line x1="0" y1="-80" x2="0" y2="-55" stroke="#333" stroke-width="3"/>
+    <circle cx="0" cy="-90" r="8" fill="#333"/>
+
+    <!-- 桨叶（大角度） -->
+    <g transform="rotate(25, 0, -55)">
+      <path d="M -100,0 C -100,-20 -50,-32 0,-28 C 50,-24 80,-15 100,0 C 80,10 50,15 0,14 C -50,12 -100,6 -100,0 Z"
+            fill="#4A90D9" stroke="#2C5F8A" stroke-width="2"/>
+    </g>
+    <text x="-80" y="-30" font-size="12" fill="#4A90D9" font-weight="bold">桨叶角度大</text>
+
+    <!-- 大升力箭头 -->
+    <g stroke="#2ECC71" stroke-width="5" fill="#2ECC71">
+      <line x1="0" y1="20" x2="0" y2="-30" stroke-linecap="round"/>
+      <polygon points="-10,-30 0,-55 10,-30"/>
+    </g>
+    <text x="20" y="-35" font-size="14" font-weight="bold" fill="#2ECC71">升力大</text>
+
+    <text x="0" y="55" text-anchor="middle" font-size="13" fill="#555">→ 直升机上升</text>
+  </g>
+
+  <line x1="400" y1="50" x2="400" y2="280" stroke="#DEE2E6" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- 总距减小 -->
+  <g transform="translate(570,180)">
+    <text x="0" y="-115" text-anchor="middle" font-size="15" font-weight="bold" fill="#E74C3C">总距减小</text>
+    <text x="0" y="-98" text-anchor="middle" font-size="11" fill="#555">Collective Down</text>
+
+    <line x1="0" y1="-80" x2="0" y2="-55" stroke="#333" stroke-width="3"/>
+    <circle cx="0" cy="-90" r="8" fill="#333"/>
+
+    <!-- 桨叶（小角度） -->
+    <g transform="rotate(3, 0, -55)">
+      <path d="M -100,0 C -100,-8 -50,-14 0,-12 C 50,-10 80,-6 100,0 C 80,5 50,8 0,7 C -50,5 -100,3 -100,0 Z"
+            fill="#4A90D9" stroke="#2C5F8A" stroke-width="2"/>
+    </g>
+    <text x="-60" y="-28" font-size="12" fill="#4A90D9" font-weight="bold">桨叶角度小</text>
+
+    <g stroke="#E74C3C" stroke-width="3" fill="#E74C3C">
+      <line x1="0" y1="10" x2="0" y2="-18" stroke-linecap="round"/>
+      <polygon points="-7,-18 0,-32 7,-18"/>
+    </g>
+    <text x="18" y="-20" font-size="13" font-weight="bold" fill="#E74C3C">升力小</text>
+
+    <text x="0" y="55" text-anchor="middle" font-size="13" fill="#555">→ 直升机下降</text>
+  </g>
+
+  <rect x="80" y="305" width="640" height="38" rx="8" fill="#EEF2F7"/>
+  <text x="400" y="325" text-anchor="middle" font-size="13" fill="#1A1A2E">同时改变所有桨叶角度 → 升力同时增大/减小 → 控制垂直升降</text>
+  <text x="400" y="340" text-anchor="middle" font-size="13" fill="#1A1A2E">All blades tilt together → Lift increases/decreases → Up/Down</text>
+</svg>

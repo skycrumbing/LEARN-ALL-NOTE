@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 360" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <marker id="arrRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#e74c3c"/>
+    </marker>
+    <marker id="arrBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#3498db"/>
+    </marker>
+  </defs>
+
+  <!-- 标题 -->
+  <rect x="0" y="0" width="850" height="42" rx="6" fill="#2c3e50"/>
+  <text x="425" y="28" font-size="18" font-weight="bold" fill="#fff" text-anchor="middle">触碰不同位置的危险程度</text>
+
+  <!-- 配电箱 -->
+  <rect x="20" y="80" width="80" height="70" rx="6" fill="#f5f5f5" stroke="#555" stroke-width="2"/>
+  <text x="60" y="112" font-size="13" fill="#333" text-anchor="middle" font-weight="bold">配电箱</text>
+  <text x="60" y="132" font-size="10" fill="#888" text-anchor="middle">配电柜</text>
+
+  <!-- 火线主干 -->
+  <line x1="100" y1="105" x2="830" y2="105" stroke="#e74c3c" stroke-width="3"/>
+  <text x="465" y="95" font-size="11" fill="#e74c3c" text-anchor="middle" font-weight="bold">火线 — 始终带 220V</text>
+
+  <!-- 开关 -->
+  <rect x="200" y="78" width="70" height="54" rx="5" fill="#fff" stroke="#333" stroke-width="1.5"/>
+  <rect x="212" y="88" width="14" height="34" fill="#e74c3c"/>
+  <rect x="234" y="88" width="14" height="34" fill="#e74c3c"/>
+  <text x="235" y="145" font-size="11" fill="#333" text-anchor="middle">开关</text>
+
+  <!-- 插座 -->
+  <rect x="350" y="78" width="70" height="54" rx="5" fill="#fff" stroke="#333" stroke-width="1.5"/>
+  <circle cx="365" cy="105" r="7" fill="none" stroke="#555"/>
+  <circle cx="395" cy="105" r="7" fill="none" stroke="#555"/>
+  <text x="385" y="145" font-size="11" fill="#333" text-anchor="middle">插座</text>
+
+  <!-- 负载/电器 -->
+  <rect x="500" y="78" width="70" height="54" rx="5" fill="#fff" stroke="#333" stroke-width="1.5"/>
+  <text x="535" y="105" font-size="12" fill="#333" text-anchor="middle">电器</text>
+  <text x="535" y="120" font-size="9" fill="#888" text-anchor="middle">负载</text>
+
+  <!-- 零线主干 -->
+  <line x1="100" y1="165" x2="830" y2="165" stroke="#3498db" stroke-width="3"/>
+  <text x="465" y="184" font-size="11" fill="#3498db" text-anchor="middle" font-weight="bold">零线 — 正常时 0V</text>
+
+  <!-- 分支连接线（配电拓扑，非电流方向） -->
+  <line x1="235" y1="105" x2="235" y2="165" stroke="#888" stroke-width="2"/>
+  <line x1="385" y1="105" x2="385" y2="165" stroke="#888" stroke-width="2"/>
+  <line x1="535" y1="105" x2="535" y2="165" stroke="#888" stroke-width="2"/>
+
+  <!-- 危险标注 1：触碰火线 -->
+  <rect x="380" y="220" width="340" height="50" rx="8" fill="#fdf2f2" stroke="#e74c3c" stroke-width="2"/>
+  <circle cx="405" cy="245" r="14" fill="#e74c3c"/>
+  <text x="405" y="250" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">!</text>
+  <text x="430" y="238" font-size="12" fill="#c0392b" font-weight="bold">触碰火线</text>
+  <text x="430" y="258" font-size="11" fill="#333">始终 220V → 直接触电</text>
+
+  <!-- 危险标注 2：触碰正常零线 -->
+  <rect x="380" y="278" width="340" height="50" rx="8" fill="#e8f8f5" stroke="#27ae60" stroke-width="2"/>
+  <circle cx="405" cy="303" r="14" fill="#27ae60"/>
+  <text x="405" y="308" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">✓</text>
+  <text x="430" y="296" font-size="12" fill="#1e8449" font-weight="bold">触碰正常零线</text>
+  <text x="430" y="316" font-size="11" fill="#333">0V → 通常安全</text>
+
+  <!-- 危险标注 3：触碰断开零线 -->
+  <rect x="380" y="335" width="340" height="22" rx="6" fill="#fdf2f2" stroke="#e74c3c" stroke-width="1.5"/>
+  <circle cx="403" cy="346" r="7" fill="#e74c3c"/>
+  <text x="403" y="350" font-size="10" fill="#fff" text-anchor="middle" font-weight="bold">!</text>
+  <text x="422" y="350" font-size="11" fill="#c0392b" font-weight="bold">触碰断开的零线前端 = 触电！</text>
+
+  <!-- 左侧图例 -->
+  <rect x="20" y="220" width="340" height="134" rx="8" fill="#fef9e7" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="190" y="245" font-size="13" fill="#e67e22" text-anchor="middle" font-weight="bold">安全铁律</text>
+  <text x="190" y="270" font-size="12" fill="#333" text-anchor="middle">⚡ 只断零线 ≠ 断电</text>
+  <text x="190" y="292" font-size="12" fill="#333" text-anchor="middle">必须同时断开火线和零线</text>
+  <text x="190" y="320" font-size="11" fill="#c0392b" text-anchor="middle" font-weight="bold">否则零线 = 220V = 和火线一样危险</text>
+
+  <!-- 底部：人体触电路径 -->
+  <text x="425" y="55" font-size="10" fill="#999" text-anchor="middle">触碰火线后电流路径：火线 → 人体 → 大地 → 变压器中性点</text>
+</svg>

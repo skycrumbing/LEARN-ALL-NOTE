@@ -1,0 +1,4 @@
+# 固定 opencv-python 4.x：5.x 移除了 CascadeClassifier(Haar 级联) 等经典 API
+opencv-python>=4.10,<5
+numpy
+ultralytics

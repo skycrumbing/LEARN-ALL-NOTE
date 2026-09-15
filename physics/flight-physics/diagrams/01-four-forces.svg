@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <!-- 背景 -->
+  <rect width="800" height="500" fill="#FAFBFC" rx="12"/>
+
+  <!-- 标题 -->
+  <text x="400" y="40" text-anchor="middle" font-size="22" font-weight="bold" fill="#1a1a2e">飞行的四大基本力</text>
+
+  <!-- 飞机主体 -->
+  <g transform="translate(400,260)">
+    <!-- 机身 -->
+    <path d="M -120,-8 L 140,-8 L 160,0 L 140,8 L -120,8 Z" fill="#4A90D9" stroke="#2C5F8A" stroke-width="2"/>
+    <!-- 机翼 -->
+    <path d="M -20,-8 L -80,-60 L -110,-60 L -50,-8 Z" fill="#5BA3E0" stroke="#2C5F8A" stroke-width="2"/>
+    <path d="M -20,8 L -80,60 L -110,60 L -50,8 Z" fill="#5BA3E0" stroke="#2C5F8A" stroke-width="2"/>
+    <!-- 尾翼 -->
+    <path d="M 100,-8 L 140,-40 L 155,-40 L 120,-8 Z" fill="#5BA3E0" stroke="#2C5F8A" stroke-width="2"/>
+    <path d="M 100,8 L 140,40 L 155,40 L 120,8 Z" fill="#5BA3E0" stroke="#2C5F8A" stroke-width="2"/>
+    <!-- 发动机 -->
+    <ellipse cx="-70" cy="-8" rx="20" ry="6" fill="#333" stroke="#111" stroke-width="1"/>
+    <ellipse cx="-70" cy="8" rx="20" ry="6" fill="#333" stroke="#111" stroke-width="1"/>
+    <!-- 速度线 -->
+    <line x1="160" y1="-30" x2="200" y2="-30" stroke="#999" stroke-width="2" stroke-dasharray="5,3"/>
+    <line x1="160" y1="0" x2="210" y2="0" stroke="#999" stroke-width="2" stroke-dasharray="5,3"/>
+    <line x1="160" y1="30" x2="200" y2="30" stroke="#999" stroke-width="2" stroke-dasharray="5,3"/>
+  </g>
+
+  <!-- 升力箭头 -->
+  <g stroke="#E74C3C" stroke-width="4" fill="#E74C3C">
+    <line x1="400" y1="140" x2="400" y2="200" stroke-linecap="round"/>
+    <polygon points="388,140 400,118 412,140"/>
+  </g>
+  <text x="400" y="105" text-anchor="middle" font-size="16" font-weight="bold" fill="#E74C3C">升力 Lift</text>
+  <text x="400" y="125" text-anchor="middle" font-size="12" fill="#E74C3C">克服重力</text>
+
+  <!-- 重力箭头 -->
+  <g stroke="#7F8C8D" stroke-width="4" fill="#7F8C8D">
+    <line x1="400" y1="300" x2="400" y2="360" stroke-linecap="round"/>
+    <polygon points="388,360 400,382 412,360"/>
+  </g>
+  <text x="400" y="405" text-anchor="middle" font-size="16" font-weight="bold" fill="#7F8C8D">重力 Weight</text>
+  <text x="400" y="425" text-anchor="middle" font-size="12" fill="#7F8C8D">地球引力</text>
+
+  <!-- 推力箭头 -->
+  <g stroke="#2ECC71" stroke-width="4" fill="#2ECC71">
+    <line x1="550" y1="260" x2="620" y2="260" stroke-linecap="round"/>
+    <polygon points="620,248 642,260 620,272"/>
+  </g>
+  <text x="650" y="266" font-size="16" font-weight="bold" fill="#2ECC71">推力</text>
+  <text x="650" y="284" font-size="14" font-weight="bold" fill="#2ECC71">Thrust</text>
+  <text x="650" y="302" font-size="12" fill="#2ECC71">发动机提供</text>
+
+  <!-- 阻力箭头 -->
+  <g stroke="#F39C12" stroke-width="4" fill="#F39C12">
+    <line x1="180" y1="260" x2="250" y2="260" stroke-linecap="round"/>
+    <polygon points="180,248 158,260 180,272"/>
+  </g>
+  <text x="150" y="250" text-anchor="end" font-size="16" font-weight="bold" fill="#F39C12">阻力</text>
+  <text x="150" y="270" text-anchor="end" font-size="14" font-weight="bold" fill="#F39C12">Drag</text>
+  <text x="150" y="288" text-anchor="end" font-size="12" fill="#F39C12">空气摩擦</text>
+
+  <!-- 底部说明 -->
+  <rect x="80" y="445" width="640" height="42" rx="8" fill="#EEF2F7"/>
+  <text x="400" y="463" text-anchor="middle" font-size="14" fill="#555">起飞条件：升力 &gt; 重力  |  巡航条件：推力 = 阻力，升力 = 重力</text>
+  <text x="400" y="480" text-anchor="middle" font-size="14" fill="#555">Lift &gt; Weight for takeoff  |  Thrust = Drag, Lift = Weight for cruise</text>
+</svg>

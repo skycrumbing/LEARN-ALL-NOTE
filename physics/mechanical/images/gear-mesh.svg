@@ -1,0 +1,43 @@
+<svg viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <!-- 小齿轮（驱动） -->
+  <g transform="translate(135, 140)">
+    <!-- 齿 -->
+    <circle r="46" fill="none" stroke="#e67700" stroke-width="16" stroke-dasharray="9 7"/>
+    <!-- 齿轮体 -->
+    <circle r="37" fill="#ffe066" stroke="#e67700" stroke-width="3"/>
+    <!-- 轴孔 -->
+    <circle r="7" fill="#495057"/>
+    <!-- 旋转方向箭头 -->
+    <path d="M -20 -52 A 56 56 0 0 1 20 -52" fill="none" stroke="#c92a2a" stroke-width="3" marker-end="url(#gmArrow)"/>
+  </g>
+  <text x="135" y="30" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">小齿轮（驱动）</text>
+  <text x="135" y="48" text-anchor="middle" font-size="13" fill="#e67700">z1 = 10 齿</text>
+
+  <!-- 大齿轮（从动） -->
+  <g transform="translate(370, 120)">
+    <!-- 齿 -->
+    <circle r="82" fill="none" stroke="#e67700" stroke-width="16" stroke-dasharray="9 7"/>
+    <!-- 齿轮体 -->
+    <circle r="73" fill="#ffe066" stroke="#e67700" stroke-width="3"/>
+    <!-- 轴孔 -->
+    <circle r="7" fill="#495057"/>
+    <!-- 旋转方向箭头（反向） -->
+    <path d="M -20 -92 A 102 102 0 0 0 20 -92" fill="none" stroke="#c92a2a" stroke-width="3" marker-end="url(#gmArrow)"/>
+  </g>
+  <text x="370" y="16" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">大齿轮（从动）</text>
+  <text x="370" y="34" text-anchor="middle" font-size="13" fill="#e67700">z2 = 40 齿</text>
+
+  <!-- 啮合点标注 -->
+  <circle cx="246" cy="202" r="4" fill="#2b8a3e"/>
+  <text x="246" y="222" text-anchor="middle" font-size="12" fill="#2b8a3e">啮合点</text>
+
+  <!-- 结论 -->
+  <text x="260" y="78" text-anchor="middle" font-size="15" fill="#1971c2">小齿轮转 4 圈 → 大齿轮转 1 圈</text>
+  <text x="260" y="100" text-anchor="middle" font-size="15" fill="#1971c2">转速 ÷4，扭矩 ×4</text>
+
+  <defs>
+    <marker id="gmArrow" markerWidth="12" markerHeight="12" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#c92a2a"/>
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="800" height="320" fill="#FAFBFC" rx="12"/>
+
+  <text x="400" y="35" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a2e">直升机尾桨：抵消反扭矩</text>
+
+  <g transform="translate(400,180)">
+    <!-- 主旋翼 -->
+    <g transform="translate(-100, -50)">
+      <line x1="-60" y1="0" x2="60" y2="0" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+      <line x1="-50" y1="0" x2="50" y2="0" stroke="#333" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <circle cx="0" cy="0" r="6" fill="#333"/>
+
+      <!-- 旋转方向箭头 -->
+      <g stroke="#4A90D9" stroke-width="1.5" fill="none">
+        <path d="M -45,0 A 45,45 0 0 1 32,-32" stroke-dasharray="4,3"/>
+        <polygon points="32,-32 22,-35 28,-22" fill="#4A90D9" stroke="none"/>
+      </g>
+      <text x="0" y="-40" text-anchor="middle" font-size="11" fill="#4A90D9" font-weight="bold">逆时针</text>
+    </g>
+
+    <!-- 机身 -->
+    <path d="M -120,-15 L 0,-15 L 20,-5 L 40,10 L 20,25 L 0,35 L -120,35 Z"
+          fill="#4A90D9" stroke="#2C5F8A" stroke-width="2"/>
+    <text x="-60" y="15" font-size="12" fill="#fff" font-weight="bold">机身</text>
+
+    <!-- 尾梁 -->
+    <path d="M 40,10 L 130,0 L 140,10 L 130,20 L 40,25 Z" fill="#4A90D9" stroke="#2C5F8A" stroke-width="2"/>
+
+    <!-- 尾桨 -->
+    <line x1="140" y1="-20" x2="140" y2="40" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+    <line x1="125" y1="-15" x2="155" y2="-15" stroke="#333" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+    <line x1="125" y1="0" x2="155" y2="0" stroke="#333" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+    <line x1="125" y1="15" x2="155" y2="15" stroke="#333" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+
+    <text x="140" y="-30" text-anchor="middle" font-size="12" fill="#2ECC71" font-weight="bold">尾桨</text>
+
+    <!-- 尾桨推力箭头 -->
+    <g stroke="#2ECC71" stroke-width="3" fill="#2ECC71">
+      <line x1="140" y1="70" x2="140" y2="100" stroke-linecap="round"/>
+      <polygon points="132,100 140,115 148,100"/>
+    </g>
+    <text x="140" y="130" text-anchor="middle" font-size="11" fill="#2ECC71" font-weight="bold">侧向力</text>
+
+    <!-- 反扭矩标注 -->
+    <g stroke="#E74C3C" stroke-width="2" fill="none">
+      <path d="M -100,-80 A 30,30 0 0 1 -70,-65" stroke-dasharray="4,2"/>
+      <polygon points="-70,-65 -80,-68 -75,-55" fill="#E74C3C" stroke="none"/>
+    </g>
+    <text x="-100" y="-85" font-size="11" fill="#E74C3C" font-weight="bold">反扭矩</text>
+
+    <text x="-100" y="80" text-anchor="middle" font-size="12" fill="#E74C3C">主旋翼力矩</text>
+    <text x="-100" y="98" text-anchor="middle" font-size="11" fill="#E74C3C">→ 机身想反向旋转</text>
+  </g>
+
+  <rect x="80" y="270" width="640" height="40" rx="8" fill="#EEF2F7"/>
+  <text x="400" y="292" text-anchor="middle" font-size="13" fill="#1A1A2E">尾桨产生侧向力 → 形成与反扭矩方向相反的力矩 → 机身不再旋转</text>
+  <text x="400" y="308" text-anchor="middle" font-size="13" fill="#1A1A2E">Tail rotor creates opposite torque → cancels anti-torque → body stays stable</text>
+</svg>

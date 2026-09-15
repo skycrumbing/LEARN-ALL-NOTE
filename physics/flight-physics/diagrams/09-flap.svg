@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="900" height="320" fill="#FAFBFC" rx="12"/>
+
+  <text x="450" y="35" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a2e">襟翼 (Flap)：增大升力的辅助装置</text>
+
+  <!-- 襟翼收起 -->
+  <g transform="translate(230,170)">
+    <text x="0" y="-100" text-anchor="middle" font-size="15" font-weight="bold" fill="#1A1A2E">襟翼收起（巡航）</text>
+    <text x="0" y="-85" text-anchor="middle" font-size="11" fill="#555">Flap Retracted</text>
+
+    <path d="M -160,0 C -160,-35 -80,-55 0,-48 C 80,-42 130,-25 160,0 C 130,15 80,22 0,20 C -80,18 -160,10 -160,0 Z"
+          fill="#4A90D9" stroke="#2C5F8A" stroke-width="2"/>
+
+    <!-- 小升力箭头 -->
+    <g stroke="#2ECC71" stroke-width="3" fill="#2ECC71">
+      <line x1="0" y1="50" x2="0" y2="25" stroke-linecap="round"/>
+      <polygon points="-6,25 0,10 6,25"/>
+    </g>
+    <text x="0" y="-5" text-anchor="middle" font-size="11" fill="#2ECC71">升力</text>
+    <text x="0" y="-18" text-anchor="middle" font-size="11" fill="#2ECC71">较小</text>
+
+    <text x="0" y="80" text-anchor="middle" font-size="12" fill="#555">机翼面积 S 小</text>
+    <text x="0" y="98" text-anchor="middle" font-size="12" fill="#555">弯度小，CL 小</text>
+  </g>
+
+  <!-- 分隔线 -->
+  <line x1="450" y1="50" x2="450" y2="270" stroke="#DEE2E6" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- 襟翼放下 -->
+  <g transform="translate(670,170)">
+    <text x="0" y="-100" text-anchor="middle" font-size="15" font-weight="bold" fill="#E74C3C">襟翼放下（起飞/降落）</text>
+    <text x="0" y="-85" text-anchor="middle" font-size="11" fill="#555">Flap Extended</text>
+
+    <!-- 主翼型（前半段） -->
+    <path d="M -160,0 C -160,-35 -80,-55 0,-48 C 60,-42 100,-30 130,-15"
+          fill="#4A90D9" stroke="#2C5F8A" stroke-width="2"/>
+    <!-- 襟翼（后半段，向下偏转） -->
+    <path d="M 130,-15 C 140,-8 150,0 160,15 C 155,25 145,32 130,35 C 100,32 60,28 0,20"
+          fill="#5BA3E0" stroke="#2C5F8A" stroke-width="2" stroke-dasharray="5,3"/>
+    <path d="M 0,20 C -80,18 -160,10 -160,0" fill="#4A90D9" stroke="#2C5F8A" stroke-width="2"/>
+
+    <!-- 大升力箭头 -->
+    <g stroke="#E74C3C" stroke-width="5" fill="#E74C3C">
+      <line x1="0" y1="70" x2="0" y2="30" stroke-linecap="round"/>
+      <polygon points="-9,30 0,8 9,30"/>
+    </g>
+    <text x="0" y="-5" text-anchor="middle" font-size="11" fill="#E74C3C">升力</text>
+    <text x="0" y="-20" text-anchor="middle" font-size="11" fill="#E74C3C">更大！</text>
+
+    <text x="0" y="90" text-anchor="middle" font-size="12" fill="#E74C3C">机翼面积 S 增大</text>
+    <text x="0" y="108" text-anchor="middle" font-size="12" fill="#E74C3C">弯度增大，CL 增大</text>
+  </g>
+
+  <rect x="80" y="265" width="740" height="45" rx="8" fill="#EEF2F7"/>
+  <text x="450" y="288" text-anchor="middle" font-size="13" fill="#1A1A2E">襟翼放下 → S 增大 + CL 增大 → 起飞速度更低，跑道更短</text>
+  <text x="450" y="304" text-anchor="middle" font-size="13" fill="#1A1A2E">Flap down → Larger S + Higher CL → Lower takeoff speed, shorter runway</text>
+</svg>

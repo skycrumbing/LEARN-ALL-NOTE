@@ -1,0 +1,57 @@
+<svg viewBox="0 0 520 300" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <!-- 坐标轴 -->
+  <line x1="70" y1="250" x2="480" y2="250" stroke="#333" stroke-width="2" marker-end="url(#tcArrowX)"/>
+  <line x1="70" y1="250" x2="70" y2="30" stroke="#333" stroke-width="2" marker-end="url(#tcArrowY)"/>
+
+  <!-- 轴标签 -->
+  <text x="275" y="282" text-anchor="middle" font-size="15" fill="#333">转速 (rpm)</text>
+  <text x="28" y="140" text-anchor="middle" font-size="15" fill="#333" transform="rotate(-90 28 140)">扭矩 (N·m)</text>
+
+  <!-- 扭矩曲线（钟形） -->
+  <path d="M 70 215
+           C 120 190, 150 150, 200 120
+           C 230 104, 250 98, 270 100
+           C 300 104, 330 125, 360 155
+           C 400 195, 430 220, 460 235"
+        fill="none" stroke="#e8590c" stroke-width="4"/>
+
+  <!-- 峰值点 -->
+  <circle cx="270" cy="100" r="6" fill="#c92a2a"/>
+  <line x1="270" y1="100" x2="270" y2="250" stroke="#c92a2a" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="285" y="95" font-size="13" font-weight="bold" fill="#c92a2a">扭矩峰值（约 4000 rpm）</text>
+
+  <!-- 转速刻度 -->
+  <line x1="120" y1="250" x2="120" y2="256" stroke="#333" stroke-width="2"/>
+  <text x="120" y="270" text-anchor="middle" font-size="12" fill="#555">1000</text>
+  <text x="120" y="288" text-anchor="middle" font-size="11" fill="#868e96">怠速</text>
+
+  <line x1="210" y1="250" x2="210" y2="256" stroke="#333" stroke-width="2"/>
+  <text x="210" y="270" text-anchor="middle" font-size="12" fill="#555">3000</text>
+  <text x="210" y="288" text-anchor="middle" font-size="11" fill="#868e96">常用</text>
+
+  <line x1="360" y1="250" x2="360" y2="256" stroke="#333" stroke-width="2"/>
+  <text x="360" y="270" text-anchor="middle" font-size="12" fill="#555">5000</text>
+
+  <line x1="450" y1="250" x2="450" y2="256" stroke="#c92a2a" stroke-width="2"/>
+  <text x="450" y="270" text-anchor="middle" font-size="12" fill="#c92a2a">7000</text>
+  <text x="450" y="288" text-anchor="middle" font-size="11" fill="#c92a2a">红线</text>
+
+  <!-- 区域标注 -->
+  <text x="95" y="160" text-anchor="middle" font-size="12" fill="#868e96">低转速</text>
+  <text x="95" y="176" text-anchor="middle" font-size="11" fill="#868e96">扭矩小</text>
+
+  <text x="275" y="60" text-anchor="middle" font-size="12" fill="#e8590c">中转速</text>
+  <text x="290" y="76" text-anchor="middle" font-size="11" fill="#e8590c">扭矩大（最佳）</text>
+
+  <text x="415" y="185" text-anchor="middle" font-size="12" fill="#868e96">高转速</text>
+  <text x="415" y="201" text-anchor="middle" font-size="11" fill="#868e96">扭矩降</text>
+
+  <defs>
+    <marker id="tcArrowX" markerWidth="12" markerHeight="12" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333"/>
+    </marker>
+    <marker id="tcArrowY" markerWidth="12" markerHeight="12" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333"/>
+    </marker>
+  </defs>
+</svg>

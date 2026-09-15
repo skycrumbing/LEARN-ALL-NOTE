@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="900" height="600" fill="#FAFBFC" rx="12"/>
+
+  <text x="450" y="40" text-anchor="middle" font-size="22" font-weight="bold" fill="#1a1a2e">多级火箭：抛弃空壳，逐步加速</text>
+
+  <!-- 第一级 -->
+  <g transform="translate(150,320)">
+    <path d="M 0,-120 L 12,-90 L -12,-90 Z" fill="#E74C3C" stroke="#C0392B" stroke-width="2"/>
+    <rect x="-12" y="-90" width="24" height="120" fill="#ECF0F1" stroke="#95A5A6" stroke-width="2"/>
+    <rect x="-10" y="-80" width="20" height="100" fill="#FADBD8" stroke="#E74C3C" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="0" y="-25" text-anchor="middle" font-size="8" fill="#E74C3C">燃料×多</text>
+
+    <path d="M -12,30 L -20,50 L -20,55 L -12,40 Z" fill="#E74C3C" stroke="#C0392B" stroke-width="1.5"/>
+    <path d="M 12,30 L 20,50 L 20,55 L 12,40 Z" fill="#E74C3C" stroke="#C0392B" stroke-width="1.5"/>
+
+    <g stroke="#F39C12" stroke-width="3" fill="#F39C12">
+      <line x1="0" y1="55" x2="0" y2="10" stroke-linecap="round"/>
+      <polygon points="-8,10 0,-12 8,10"/>
+    </g>
+    <text x="0" y="-20" text-anchor="middle" font-size="10" fill="#F39C12">抛!</text>
+  </g>
+  <text x="150" y="500" text-anchor="middle" font-size="14" font-weight="bold" fill="#E74C3C">第一级</text>
+  <text x="150" y="518" text-anchor="middle" font-size="11" fill="#555">燃料最多 · 推力最大</text>
+
+  <!-- 过渡箭头 -->
+  <g stroke="#999" stroke-width="2" fill="#999">
+    <line x1="180" y1="320" x2="230" y2="320"/>
+    <polygon points="225,313 240,320 225,327"/>
+  </g>
+
+  <!-- 第二级 -->
+  <g transform="translate(300,340)">
+    <path d="M 0,-110 L 10,-85 L -10,-85 Z" fill="#F39C12" stroke="#D68910" stroke-width="2"/>
+    <rect x="-10" y="-85" width="20" height="100" fill="#ECF0F1" stroke="#95A5A6" stroke-width="2"/>
+    <rect x="-8" y="-75" width="16" height="85" fill="#FDEBD0" stroke="#F39C12" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="0" y="-35" text-anchor="middle" font-size="8" fill="#F39C12">燃料</text>
+
+    <path d="M -10,20 L -17,38 L -17,42 L -10,28 Z" fill="#F39C12" stroke="#D68910" stroke-width="1.5"/>
+    <path d="M 10,20 L 17,38 L 17,42 L 10,28 Z" fill="#F39C12" stroke="#D68910" stroke-width="1.5"/>
+
+    <g stroke="#F39C12" stroke-width="3" fill="#F39C12">
+      <line x1="0" y1="42" x2="0" y2="-2" stroke-linecap="round"/>
+      <polygon points="-8,-2 0,-24 8,-2"/>
+    </g>
+    <text x="0" y="-32" text-anchor="middle" font-size="10" fill="#F39C12">抛!</text>
+  </g>
+  <text x="300" y="500" text-anchor="middle" font-size="14" font-weight="bold" fill="#F39C12">第二级</text>
+  <text x="300" y="518" text-anchor="middle" font-size="11" fill="#555">燃料较少 · 速度增加</text>
+
+  <!-- 过渡箭头 -->
+  <g stroke="#999" stroke-width="2" fill="#999">
+    <line x1="325" y1="340" x2="380" y2="340"/>
+    <polygon points="375,333 390,340 375,347"/>
+  </g>
+
+  <!-- 第三级 -->
+  <g transform="translate(470,360)">
+    <path d="M 0,-100 L 8,-80 L -8,-80 Z" fill="#2ECC71" stroke="#27AE60" stroke-width="2"/>
+    <rect x="-8" y="-80" width="16" height="90" fill="#ECF0F1" stroke="#95A5A6" stroke-width="2"/>
+    <rect x="-6" y="-72" width="12" height="75" fill="#D5F5E3" stroke="#2ECC71" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="0" y="-30" text-anchor="middle" font-size="7" fill="#2ECC71">燃料</text>
+
+    <path d="M -8,15 L -14,30 L -14,33 L -8,22 Z" fill="#2ECC71" stroke="#27AE60" stroke-width="1.5"/>
+    <path d="M 8,15 L 14,30 L 14,33 L 8,22 Z" fill="#2ECC71" stroke="#27AE60" stroke-width="1.5"/>
+
+    <g stroke="#F39C12" stroke-width="3" fill="#F39C12">
+      <line x1="0" y1="70" x2="0" y2="100" stroke-linecap="round"/>
+      <polygon points="-8,70 0,52 8,70"/>
+    </g>
+  </g>
+  <text x="470" y="500" text-anchor="middle" font-size="14" font-weight="bold" fill="#2ECC71">第三级</text>
+  <text x="470" y="518" text-anchor="middle" font-size="11" fill="#555">燃料最少 · 精确入轨</text>
+
+  <!-- 过渡箭头 -->
+  <g stroke="#999" stroke-width="2" fill="#999">
+    <line x1="490" y1="360" x2="550" y2="360"/>
+    <polygon points="545,353 560,360 545,367"/>
+  </g>
+
+  <!-- 载荷 -->
+  <g transform="translate(600,360)">
+    <rect x="-15" y="-30" width="30" height="60" rx="4" fill="#4A90D9" stroke="#2C5F8A" stroke-width="2"/>
+    <text x="0" y="-8" text-anchor="middle" font-size="8" fill="#fff">卫星</text>
+    <text x="0" y="6" text-anchor="middle" font-size="8" fill="#fff">/飞船</text>
+    <!-- 太阳能板 -->
+    <rect x="-35" y="-25" width="20" height="15" fill="#1A1A2E" stroke="#000" stroke-width="1"/>
+    <rect x="15" y="-25" width="20" height="15" fill="#1A1A2E" stroke="#000" stroke-width="1"/>
+    <line x1="-30" y1="-25" x2="-30" y2="-10" stroke="#1A1A2E" stroke-width="1"/>
+    <line x1="-25" y1="-25" x2="-25" y2="-10" stroke="#1A1A2E" stroke-width="1"/>
+    <line x1="-20" y1="-25" x2="-20" y2="-10" stroke="#1A1A2E" stroke-width="1"/>
+    <line x1="20" y1="-25" x2="20" y2="-10" stroke="#1A1A2E" stroke-width="1"/>
+    <line x1="25" y1="-25" x2="25" y2="-10" stroke="#1A1A2E" stroke-width="1"/>
+    <line x1="30" y1="-25" x2="30" y2="-10" stroke="#1A1A2E" stroke-width="1"/>
+  </g>
+  <text x="600" y="500" text-anchor="middle" font-size="14" font-weight="bold" fill="#4A90D9">载荷</text>
+  <text x="600" y="518" text-anchor="middle" font-size="11" fill="#555">卫星 / 载人飞船</text>
+
+  <!-- 底部数学效果 -->
+  <g transform="translate(60,550)">
+    <rect x="0" y="0" width="780" height="40" rx="8" fill="#EEF2F7"/>
+    <text x="390" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1A1A2E">单级 Δv = ve × ln(20) ≈ 8294 m/s  →  不够入轨</text>
+    <text x="390" y="42" text-anchor="middle" font-size="13" font-weight="bold" fill="#2ECC71">三级 Δv = 3000×ln(10) + 3000×ln(8) + 3000×ln(5) ≈ 17971 m/s  ✅</text>
+  </g>
+</svg>

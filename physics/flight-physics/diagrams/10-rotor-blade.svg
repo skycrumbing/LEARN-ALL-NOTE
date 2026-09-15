@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="800" height="320" fill="#FAFBFC" rx="12"/>
+
+  <text x="400" y="35" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a2e">旋翼：旋转的机翼</text>
+
+  <g transform="translate(400,170)">
+    <!-- 桨叶截面 -->
+    <path d="M -120,0 C -120,-32 -60,-52 0,-45 C 60,-38 100,-22 120,0 C 100,15 60,22 0,20 C -60,18 -120,10 -120,0 Z"
+          fill="#4A90D9" stroke="#2C5F8A" stroke-width="2.5"/>
+
+    <!-- 旋翼轴 -->
+    <line x1="0" y1="-75" x2="0" y2="-40" stroke="#333" stroke-width="3"/>
+    <circle cx="0" cy="-85" r="10" fill="#333"/>
+
+    <!-- 旋转箭头 -->
+    <g stroke="#4A90D9" stroke-width="2" fill="none">
+      <path d="M -100,-75 A 100,100 0 0 1 80,-145" stroke-dasharray="5,3"/>
+      <polygon points="80,-145 65,-155 78,-138" fill="#4A90D9" stroke="none"/>
+    </g>
+    <text x="-80" y="-150" font-size="12" fill="#4A90D9" font-weight="bold">旋转方向</text>
+    <text x="-80" y="-132" font-size="11" fill="#4A90D9">300~600 RPM</text>
+
+    <!-- 相对气流线 -->
+    <g stroke="#E74C3C" stroke-width="1.8" fill="none" opacity="0.8">
+      <path d="M -140,-35 C -80,-60 0,-65 60,-50 C 100,-40 130,-30 150,-20" stroke-dasharray="5,3"/>
+      <path d="M -140,-55 C -80,-80 0,-85 60,-70 C 100,-60 130,-50 150,-40" stroke-dasharray="5,3"/>
+    </g>
+    <g fill="#E74C3C">
+      <polygon points="146,-22 158,-22 148,-14"/>
+      <polygon points="146,-42 158,-42 148,-34"/>
+    </g>
+
+    <!-- 升力箭头 -->
+    <g stroke="#2ECC71" stroke-width="5" fill="#2ECC71">
+      <line x1="0" y1="30" x2="0" y2="-10" stroke-linecap="round"/>
+      <polygon points="-9,-10 0,-32 9,-10"/>
+    </g>
+    <text x="20" y="-10" font-size="14" font-weight="bold" fill="#2ECC71">升力 ↑</text>
+
+    <!-- 标注 -->
+    <text x="0" y="60" text-anchor="middle" font-size="13" fill="#555">桨叶截面（与固定翼相同）</text>
+  </g>
+
+  <rect x="80" y="265" width="640" height="45" rx="8" fill="#EEF2F7"/>
+  <text x="400" y="288" text-anchor="middle" font-size="13" fill="#1A1A2E">桨叶高速旋转 → 产生相对气流 → 每片桨叶都是机翼 → 叠加产生升力</text>
+  <text x="400" y="304" text-anchor="middle" font-size="13" fill="#1A1A2E">Rotating blades = rotating wings → lift from each blade combines to lift the helicopter</text>
+</svg>

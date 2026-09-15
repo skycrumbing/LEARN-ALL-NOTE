@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="800" height="400" fill="#FAFBFC" rx="12"/>
+
+  <text x="400" y="35" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a2e">变距 (Cyclic Pitch)：控制方向</text>
+
+  <g transform="translate(400,220)">
+    <!-- 旋翼盘（前倾） -->
+    <g transform="rotate(-15)">
+      <ellipse cx="0" cy="0" rx="200" ry="40" fill="#4A90D9" stroke="#2C5F8A" stroke-width="2" opacity="0.3"/>
+      <line x1="-200" y1="0" x2="200" y2="0" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+      <line x1="-180" y1="0" x2="180" y2="0" stroke="#333" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+      <line x1="-160" y1="0" x2="160" y2="0" stroke="#333" stroke-width="3" stroke-linecap="round" opacity="0.3"/>
+    </g>
+
+    <!-- 前部小升力 -->
+    <g transform="rotate(-15)" translate="-180 0">
+      <g stroke="#F39C12" stroke-width="2" fill="#F39C12">
+        <line x1="0" y1="-30" x2="0" y2="-10" stroke-linecap="round"/>
+        <polygon points="-4,-10 0,-20 4,-10"/>
+      </g>
+      <text x="0" y="-35" text-anchor="middle" font-size="11" fill="#F39C12">升力小</text>
+    </g>
+
+    <!-- 后部大升力 -->
+    <g transform="rotate(-15)" translate="180 0">
+      <g stroke="#E74C3C" stroke-width="4" fill="#E74C3C">
+        <line x1="0" y1="-40" x2="0" y2="-10" stroke-linecap="round"/>
+        <polygon points="-8,-10 0,-25 8,-10"/>
+      </g>
+      <text x="0" y="-48" text-anchor="middle" font-size="11" font-weight="bold" fill="#E74C3C">升力大</text>
+    </g>
+
+    <!-- 机身（前倾） -->
+    <g transform="rotate(-8)">
+      <path d="M -50,-10 L 50,-10 L 70,10 L 90,30 L 70,50 L 50,65 L -50,65 L -70,50 L -90,30 L -70,10 Z"
+            fill="#4A90D9" stroke="#2C5F8A" stroke-width="2"/>
+      <text x="0" y="30" text-anchor="middle" font-size="13" fill="#fff" font-weight="bold">机身</text>
+      <text x="0" y="48" text-anchor="middle" font-size="11" fill="#fff">前倾</text>
+    </g>
+
+    <!-- 合力方向箭头 -->
+    <g stroke="#1A1A2E" stroke-width="4" fill="#1A1A2E">
+      <line x1="-30" y1="-80" x2="-60" y2="-140" stroke-linecap="round"/>
+      <polygon points="-55,-135 -72,-143 -68,-125"/>
+    </g>
+    <text x="-70" y="-150" text-anchor="middle" font-size="12" font-weight="bold" fill="#1A1A2E">升力合力方向</text>
+
+    <!-- 水平分量箭头 -->
+    <g stroke="#2ECC71" stroke-width="3" fill="#2ECC71">
+      <line x1="-30" y1="-80" x2="-120" y2="-80" stroke-linecap="round"/>
+      <polygon points="-120,-88 -140,-80 -120,-72"/>
+    </g>
+    <text x="-145" y="-70" text-anchor="end" font-size="12" font-weight="bold" fill="#2ECC71">水平分量</text>
+    <text x="-145" y="-55" text-anchor="end" font-size="11" fill="#2ECC71">推动直升机前进</text>
+  </g>
+
+  <rect x="80" y="355" width="640" height="38" rx="8" fill="#EEF2F7"/>
+  <text x="400" y="375" text-anchor="middle" font-size="13" fill="#1A1A2E">旋翼盘前倾 → 升力方向前倾 → 升力的水平分量推动直升机向前飞</text>
+  <text x="400" y="390" text-anchor="middle" font-size="13" fill="#1A1A2E">Rotor disc tilts forward → Lift tilts → Horizontal component = forward thrust</text>
+</svg>

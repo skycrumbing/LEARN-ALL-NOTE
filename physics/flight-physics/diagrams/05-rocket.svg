@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="800" height="600" fill="#FAFBFC" rx="12"/>
+
+  <text x="400" y="40" text-anchor="middle" font-size="22" font-weight="bold" fill="#1a1a2e">火箭：牛顿第三定律与拉瓦尔喷管</text>
+
+  <!-- 火箭主体 -->
+  <g transform="translate(280,300)">
+    <!-- 箭头 -->
+    <path d="M 0,-180 L 25,-130 L -25,-130 Z" fill="#E74C3C" stroke="#C0392B" stroke-width="2"/>
+    <!-- 箭身 -->
+    <rect x="-25" y="-130" width="50" height="200" fill="#ECF0F1" stroke="#95A5A6" stroke-width="2"/>
+    <!-- 燃料舱标识 -->
+    <rect x="-22" y="-100" width="44" height="140" fill="#FADBD8" stroke="#E74C3C" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="0" y="-25" text-anchor="middle" font-size="11" fill="#E74C3C" transform="rotate(-90, 0, -25)">燃料 + 氧化剂</text>
+    <!-- 鳍 -->
+    <path d="M -25,70 L -55,100 L -55,110 L -25,80 Z" fill="#E74C3C" stroke="#C0392B" stroke-width="2"/>
+    <path d="M 25,70 L 55,100 L 55,110 L 25,80 Z" fill="#E74C3C" stroke="#C0392B" stroke-width="2"/>
+
+    <!-- 喷管（拉瓦尔喷管） -->
+    <path d="M -25,70 L -15,90 L -15,100 L -25,105 L 25,105 L 15,100 L 15,90 L 25,70 Z"
+          fill="#7F8C8D" stroke="#555" stroke-width="2"/>
+
+    <!-- 火焰 -->
+    <path d="M -20,105 C -25,140 -15,170 -10,200 C -5,220 5,220 10,200 C 15,170 25,140 20,105 Z"
+          fill="#E74C3C" opacity="0.8"/>
+    <path d="M -12,105 C -15,140 -8,170 -5,200 C 0,215 5,215 8,200 C 12,170 18,140 12,105 Z"
+          fill="#F39C12" opacity="0.9"/>
+    <path d="M -6,105 C -8,140 -3,170 0,200 C 3,210 6,210 8,200 C 10,170 14,140 6,105 Z"
+          fill="#F1C40F"/>
+  </g>
+
+  <!-- 推力箭头 -->
+  <g stroke="#2ECC71" stroke-width="6" fill="#2ECC71">
+    <line x1="280" y1="120" x2="280" y2="60" stroke-linecap="round"/>
+    <polygon points="262,60 280,28 298,60"/>
+  </g>
+  <text x="280" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#2ECC71">推力 ↑</text>
+
+  <!-- 排气箭头 -->
+  <g stroke="#E74C3C" stroke-width="4" fill="#E74C3C">
+    <line x1="280" y1="530" x2="280" y2="570" stroke-linecap="round"/>
+    <polygon points="265,570 280,590 295,570"/>
+  </g>
+  <text x="280" y="558" text-anchor="middle" font-size="12" fill="#E74C3C">排气速度 ve</text>
+
+  <!-- 右侧公式 -->
+  <g transform="translate(430,140)">
+    <rect x="0" y="0" width="340" height="360" rx="12" fill="#F8F9FA" stroke="#DEE2E6" stroke-width="1.5"/>
+    <text x="170" y="30" text-anchor="middle" font-size="15" font-weight="bold" fill="#1A1A2E">火箭核心公式</text>
+
+    <line x1="15" y1="50" x2="325" y2="50" stroke="#DEE2E6"/>
+
+    <text x="170" y="82" text-anchor="middle" font-size="13" fill="#555">齐奥尔科夫斯基方程</text>
+    <text x="170" y="110" text-anchor="middle" font-size="20" font-weight="bold" fill="#1A1A2E" font-family="Cambria Math">Δv = ve × ln(m₀/mf)</text>
+
+    <line x1="15" y1="130" x2="325" y2="130" stroke="#DEE2E6"/>
+
+    <text x="170" y="158" text-anchor="middle" font-size="13" fill="#555">推力公式</text>
+    <text x="170" y="185" text-anchor="middle" font-size="17" font-weight="bold" fill="#1A1A2E">F = ṁ × ve</text>
+
+    <line x1="15" y1="205" x2="325" y2="205" stroke="#DEE2E6"/>
+
+    <text x="170" y="235" text-anchor="middle" font-size="13" fill="#555">入轨算例</text>
+    <text x="170" y="260" text-anchor="middle" font-size="14" font-weight="bold" fill="#E74C3C">目标: Δv = 7900 m/s</text>
+    <text x="170" y="282" text-anchor="middle" font-size="13" fill="#555">ve = 3000 m/s</text>
+    <text x="170" y="304" text-anchor="middle" font-size="13" fill="#555">m₀/mf = e^(7900/3000) ≈ 13.9</text>
+    <text x="170" y="330" text-anchor="middle" font-size="14" font-weight="bold" fill="#E74C3C">93% 质量都是燃料！</text>
+  </g>
+
+  <!-- 底部说明 -->
+  <rect x="60" y="510" width="340" height="60" rx="8" fill="#EEF2F7"/>
+  <text x="230" y="532" text-anchor="middle" font-size="13" font-weight="bold" fill="#1A1A2E">牛顿第三定律</text>
+  <text x="230" y="552" text-anchor="middle" font-size="12" fill="#555">向下喷出高速气体</text>
+  <text x="230" y="570" text-anchor="middle" font-size="12" fill="#555">→ 反作用力向上推火箭</text>
+
+  <rect x="430" y="510" width="340" height="60" rx="8" fill="#EEF2F7"/>
+  <text x="600" y="532" text-anchor="middle" font-size="13" font-weight="bold" fill="#1A1A2E">拉瓦尔喷管</text>
+  <text x="600" y="552" text-anchor="middle" font-size="12" fill="#555">先收缩再扩张，加速到超音速</text>
+  <text x="600" y="570" text-anchor="middle" font-size="12" fill="#555">排气速度可达 2000~4500 m/s</text>
+</svg>

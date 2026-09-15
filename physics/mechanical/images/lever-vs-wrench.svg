@@ -1,0 +1,51 @@
+<svg viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="lvArrow" markerWidth="12" markerHeight="12" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#d6336c"/>
+    </marker>
+    <marker id="wArrow" markerWidth="12" markerHeight="12" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#e8590c"/>
+    </marker>
+  </defs>
+
+  <!-- ============ 左：直线杠杆 ============ -->
+  <text x="150" y="26" text-anchor="middle" font-size="16" font-weight="bold" fill="#555">直线杠杆</text>
+
+  <!-- 支点三角形 -->
+  <polygon points="75,158 105,158 90,180" fill="#868e96" stroke="#495057" stroke-width="2"/>
+
+  <!-- 杠杆横杆 -->
+  <rect x="25" y="152" width="130" height="10" rx="5" fill="#adb5bd" stroke="#495057" stroke-width="2"/>
+
+  <!-- 重物(左端) -->
+  <rect x="15" y="185" width="36" height="24" rx="4" fill="#7048e8" stroke="#5f3dc4" stroke-width="2"/>
+  <text x="33" y="222" text-anchor="middle" font-size="12" fill="#5f3dc4">重物</text>
+
+  <!-- 力箭头(右端向下) -->
+  <line x1="155" y1="152" x2="155" y2="100" stroke="#d6336c" stroke-width="4" marker-end="url(#lvArrow)"/>
+  <text x="165" y="112" font-size="14" font-weight="bold" fill="#d6336c">力F</text>
+
+  <text x="150" y="245" text-anchor="middle" font-size="13" fill="#555">长臂端用力 → 短臂端放大</text>
+
+
+  <!-- ============ 右：旋转杠杆(扳手) ============ -->
+  <text x="460" y="26" text-anchor="middle" font-size="16" font-weight="bold" fill="#555">旋转杠杆（扳手）</text>
+
+  <!-- 支点(螺丝) -->
+  <circle cx="360" cy="158" r="20" fill="none" stroke="#b8860b" stroke-width="7"/>
+  <circle cx="360" cy="158" r="11" fill="#888" stroke="#333" stroke-width="2"/>
+  <text x="360" y="190" text-anchor="middle" font-size="12" fill="#555">螺丝(支点)</text>
+
+  <!-- 扳手柄 -->
+  <rect x="360" y="147" width="150" height="22" rx="11" fill="#d4a017" stroke="#8b6914" stroke-width="2"/>
+
+  <!-- 力箭头(柄末端向上) -->
+  <line x1="510" y1="147" x2="510" y2="90" stroke="#e8590c" stroke-width="4" marker-end="url(#wArrow)"/>
+  <text x="522" y="104" font-size="14" font-weight="bold" fill="#e8590c">力F</text>
+
+  <!-- 阻力(螺丝处，向下) -->
+  <line x1="360" y1="190" x2="360" y2="220" stroke="#5f3dc4" stroke-width="4" marker-end="url(#lvArrow)"/>
+  <text x="372" y="222" font-size="12" fill="#5f3dc4">待拧阻力</text>
+
+  <text x="460" y="245" text-anchor="middle" font-size="13" fill="#555">长力臂用力 → 螺丝处产生大扭矩</text>
+</svg>

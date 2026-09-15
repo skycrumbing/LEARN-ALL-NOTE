@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="1000" height="700" fill="#FAFBFC" rx="12"/>
+
+  <text x="500" y="40" text-anchor="middle" font-size="22" font-weight="bold" fill="#1a1a2e">VTOL 垂直起降：三种实现方式</text>
+
+  <!-- === F-35B 升力风扇 === -->
+  <g transform="translate(160,300)">
+    <!-- 机身 -->
+    <path d="M -60,-140 L 60,-140 L 80,-100 L 100,0 L 80,60 L 60,100 L 0,110 L -60,100 L -80,60 L -100,0 L -80,-100 Z"
+          fill="#4A90D9" stroke="#2C5F8A" stroke-width="2"/>
+
+    <!-- 升力风扇入口（机头上部） -->
+    <rect x="-15" y="-160" width="30" height="25" rx="4" fill="#F39C12" stroke="#D68910" stroke-width="1.5"/>
+    <text x="0" y="-145" text-anchor="middle" font-size="7" fill="#fff">风扇</text>
+
+    <!-- 主发动机喷管（向下） -->
+    <rect x="-8" y="100" width="16" height="20" rx="3" fill="#E74C3C" stroke="#C0392B" stroke-width="1.5"/>
+
+    <!-- 升力风扇向下气流 -->
+    <g stroke="#F39C12" stroke-width="2" fill="none" opacity="0.7">
+      <path d="M 0,-160 C 0,-180 0,-200 0,-220" stroke-dasharray="4,3"/>
+      <path d="M -10,-155 C -15,-180 -15,-200 -10,-220" stroke-dasharray="4,3"/>
+      <path d="M 10,-155 C 15,-180 15,-200 10,-220" stroke-dasharray="4,3"/>
+    </g>
+    <g fill="#F39C12">
+      <polygon points="-13,-215 -8,-228 -3,-215"/>
+      <polygon points="-3,-215 2,-228 7,-215"/>
+      <polygon points="3,-215 8,-228 13,-215"/>
+    </g>
+
+    <!-- 主发动机向下气流 -->
+    <g stroke="#E74C3C" stroke-width="3" fill="none">
+      <path d="M 0,120 C 0,145 0,170 0,190" stroke-dasharray="4,3"/>
+      <path d="M -5,120 C -8,145 -8,170 -5,190" stroke-dasharray="4,3"/>
+      <path d="M 5,120 C 8,145 8,170 5,190" stroke-dasharray="4,3"/>
+    </g>
+    <g fill="#E74C3C">
+      <polygon points="-8,185 -3,200 2,185"/>
+      <polygon points="-2,185 3,200 8,185"/>
+    </g>
+
+    <text x="0" y="-250" text-anchor="middle" font-size="13" font-weight="bold" fill="#F39C12">升力风扇 ↓</text>
+    <text x="0" y="230" text-anchor="middle" font-size="13" font-weight="bold" fill="#E74C3C">主发动机 ↓</text>
+  </g>
+  <text x="160" y="475" text-anchor="middle" font-size="15" font-weight="bold" fill="#4A90D9">F-35B 升力风扇</text>
+  <text x="160" y="495" text-anchor="middle" font-size="11" fill="#555">升力风扇 + 主发动机向下吹</text>
+
+  <!-- === 鹞式 矢量喷管 === -->
+  <g transform="translate(500,300)">
+    <path d="M -60,-140 L 60,-140 L 80,-100 L 100,0 L 80,60 L 60,100 L 0,110 L -60,100 L -80,60 L -100,0 L -80,-100 Z"
+          fill="#4A90D9" stroke="#2C5F8A" stroke-width="2"/>
+
+    <!-- 四个矢量喷管 -->
+    <g stroke="#E74C3C" stroke-width="2" fill="#E74C3C">
+      <rect x="-35" y="100" width="14" height="18" rx="3"/>
+      <rect x="21" y="100" width="14" height="18" rx="3"/>
+      <rect x="-35" y="-130" width="14" height="18" rx="3"/>
+      <rect x="21" y="-130" width="14" height="18" rx="3"/>
+    </g>
+
+    <!-- 四向向下气流 -->
+    <g stroke="#E74C3C" stroke-width="2" fill="#E74C3C">
+      <path d="M -28,118 L -28,200" stroke-dasharray="4,3"/>
+      <polygon points="-32,195 -28,210 -24,195"/>
+      <path d="M 28,118 L 28,200" stroke-dasharray="4,3"/>
+      <polygon points="24,195 28,210 32,195"/>
+      <path d="M -28,-130 L -28,-220" stroke-dasharray="4,3"/>
+      <polygon points="-32,-205 -28,-225 -24,-205"/>
+      <path d="M 28,-130 L 28,-220" stroke-dasharray="4,3"/>
+      <polygon points="24,-205 28,-225 32,-205"/>
+    </g>
+
+    <text x="0" y="240" text-anchor="middle" font-size="13" font-weight="bold" fill="#E74C3C">喷管旋转 180° 向下</text>
+    <text x="0" y="-240" text-anchor="middle" font-size="12" font-weight="bold" fill="#E74C3C">四具旋转喷管</text>
+  </g>
+  <text x="500" y="475" text-anchor="middle" font-size="15" font-weight="bold" fill="#4A90D9">鹞式 矢量喷管</text>
+  <text x="500" y="495" text-anchor="middle" font-size="11" fill="#555">喷管旋转 180° 垂直向下</text>
+
+  <!-- === 歼-35A 复合升力 === -->
+  <g transform="translate(840,300)">
+    <path d="M -60,-140 L 60,-140 L 80,-100 L 100,0 L 80,60 L 60,100 L 0,110 L -60,100 L -80,60 L -100,0 L -80,-100 Z"
+          fill="#4A90D9" stroke="#2C5F8A" stroke-width="2"/>
+
+    <!-- 升力发动机（机身两侧） -->
+    <g stroke="#F39C12" stroke-width="2" fill="#F39C12">
+      <rect x="-52" y="-30" width="12" height="20" rx="3"/>
+      <rect x="40" y="-30" width="12" height="20" rx="3"/>
+    </g>
+
+    <!-- 主发动机矢量喷管 -->
+    <rect x="-8" y="100" width="16" height="20" rx="3" fill="#E74C3C" stroke="#C0392B" stroke-width="1.5"/>
+
+    <!-- 升力发动机气流 -->
+    <g stroke="#F39C12" stroke-width="2" fill="#F39C12">
+      <path d="M -46,40 L -46,110" stroke-dasharray="4,3"/>
+      <polygon points="-50,105 -46,120 -42,105"/>
+      <path d="M 46,40 L 46,110" stroke-dasharray="4,3"/>
+      <polygon points="42,105 46,120 50,105"/>
+    </g>
+
+    <!-- 主发动机气流 -->
+    <g stroke="#E74C3C" stroke-width="3" fill="#E74C3C">
+      <path d="M 0,120 L 0,200" stroke-dasharray="4,3"/>
+      <polygon points="-4,195 0,210 4,195"/>
+    </g>
+
+    <text x="0" y="240" text-anchor="middle" font-size="13" font-weight="bold" fill="#E74C3C">主发动机 ↓</text>
+    <text x="-70" y="55" text-anchor="end" font-size="11" fill="#F39C12">升力</text>
+    <text x="-70" y="70" text-anchor="end" font-size="11" fill="#F39C12">发动机</text>
+  </g>
+  <text x="840" y="475" text-anchor="middle" font-size="15" font-weight="bold" fill="#4A90D9">歼-35A 复合升力</text>
+  <text x="840" y="495" text-anchor="middle" font-size="11" fill="#555">升力发动机 + 矢量喷管</text>
+
+  <!-- 底部对比表 -->
+  <g transform="translate(60,540)">
+    <rect x="0" y="0" width="880" height="130" rx="10" fill="#F8F9FA" stroke="#DEE2E6" stroke-width="1.5"/>
+
+    <text x="440" y="30" text-anchor="middle" font-size="14" font-weight="bold" fill="#1A1A2E">三种方式对比</text>
+    <line x1="20" y1="45" x2="860" y2="45" stroke="#DEE2E6"/>
+
+    <text x="70" y="70" font-size="12" font-weight="bold" fill="#555">方式</text>
+    <text x="290" y="70" font-size="12" font-weight="bold" fill="#555">优点</text>
+    <text x="510" y="70" font-size="12" font-weight="bold" fill="#555">缺点</text>
+    <text x="730" y="70" font-size="12" font-weight="bold" fill="#555">代表</text>
+
+    <text x="70" y="95" font-size="11" fill="#1A1A2E">升力风扇</text>
+    <text x="290" y="95" font-size="11" fill="#2ECC71">结构简单</text>
+    <text x="510" y="95" font-size="11" fill="#E74C3C">需额外空间</text>
+    <text x="730" y="95" font-size="11" fill="#1A1A2E">F-35B</text>
+
+    <text x="70" y="115" font-size="11" fill="#1A1A2E">矢量喷管</text>
+    <text x="290" y="115" font-size="11" fill="#2ECC71">无额外发动机</text>
+    <text x="510" y="115" font-size="11" fill="#E74C3C">喷管复杂</text>
+    <text x="730" y="115" font-size="11" fill="#1A1A2E">鹞式</text>
+
+    <text x="70" y="135" font-size="11" fill="#1A1A2E">复合升力</text>
+    <text x="290" y="135" font-size="11" fill="#2ECC71">升力最大化</text>
+    <text x="510" y="135" font-size="11" fill="#E74C3C">系统最复杂</text>
+    <text x="730" y="135" font-size="11" fill="#1A1A2E">歼-35A</text>
+  </g>
+</svg>

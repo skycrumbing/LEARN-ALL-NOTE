@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="800" height="500" fill="#FAFBFC" rx="12"/>
+
+  <text x="400" y="40" text-anchor="middle" font-size="22" font-weight="bold" fill="#1a1a2e">牛顿第三定律：机翼偏转气流</text>
+
+  <!-- 机翼 -->
+  <g transform="translate(400,250)">
+    <!-- 机身截面 -->
+    <path d="M -120,-10 L 120,-10 L 130,0 L 120,10 L -120,10 Z" fill="#4A90D9" stroke="#2C5F8A" stroke-width="2"/>
+
+    <!-- 迎角标注 -->
+    <line x1="0" y1="0" x2="80" y2="0" stroke="#888" stroke-width="1" stroke-dasharray="4,3"/>
+    <path d="M 0,0 L 80,0 A 80,80 0 0 0 76,-16" fill="none" stroke="#F39C12" stroke-width="1.5"/>
+    <text x="65" y="-10" font-size="14" font-weight="bold" fill="#F39C12">α</text>
+  </g>
+
+  <!-- 入射气流 -->
+  <g stroke="#999" stroke-width="2" fill="#999">
+    <line x1="40" y1="150" x2="240" y2="220" stroke-dasharray="6,4"/>
+    <polygon points="235,215 247,220 238,228"/>
+    <line x1="40" y1="200" x2="240" y2="250" stroke-dasharray="6,4"/>
+    <polygon points="235,245 247,250 238,258"/>
+    <line x1="40" y1="250" x2="240" y2="280" stroke-dasharray="6,4"/>
+    <polygon points="235,275 247,280 238,288"/>
+  </g>
+
+  <!-- 偏转后的气流（向下） -->
+  <g stroke="#E74C3C" stroke-width="2.5" fill="#E74C3C">
+    <line x1="560" y1="230" x2="700" y2="400" stroke-dasharray="6,4"/>
+    <polygon points="692,395 705,402 693,388"/>
+    <line x1="560" y1="260" x2="700" y2="420" stroke-dasharray="6,4"/>
+    <polygon points="692,415 705,422 693,408"/>
+    <line x1="560" y1="290" x2="700" y2="440" stroke-dasharray="6,4"/>
+    <polygon points="692,435 705,442 693,428"/>
+  </g>
+
+  <!-- 机翼对空气的力（向下） -->
+  <g stroke="#E74C3C" stroke-width="4" fill="#E74C3C">
+    <line x1="400" y1="280" x2="400" y2="380" stroke-linecap="round"/>
+    <polygon points="385,380 400,408 415,380"/>
+  </g>
+  <text x="400" y="430" text-anchor="middle" font-size="13" font-weight="bold" fill="#E74C3C">机翼推空气 ↓</text>
+
+  <!-- 空气对机翼的反作用力（向上） -->
+  <g stroke="#2ECC71" stroke-width="4" fill="#2ECC71">
+    <line x1="400" y1="220" x2="400" y2="120" stroke-linecap="round"/>
+    <polygon points="385,120 400,92 415,120"/>
+  </g>
+  <text x="400" y="80" text-anchor="middle" font-size="14" font-weight="bold" fill="#2ECC71">空气推机翼 ↑ = 升力</text>
+
+  <!-- 左侧标注 -->
+  <g transform="translate(60,160)">
+    <rect x="0" y="0" width="140" height="60" rx="8" fill="#F8F9FA" stroke="#DEE2E6"/>
+    <text x="70" y="25" text-anchor="middle" font-size="13" fill="#555">入射气流</text>
+    <text x="70" y="45" text-anchor="middle" font-size="11" fill="#999">Incoming air</text>
+  </g>
+
+  <g transform="translate(600,160)">
+    <rect x="0" y="0" width="140" height="60" rx="8" fill="#FFF0F0" stroke="#E74C3C"/>
+    <text x="70" y="25" text-anchor="middle" font-size="13" fill="#E74C3C">偏转气流</text>
+    <text x="70" y="45" text-anchor="middle" font-size="11" fill="#999">Deflected downward</text>
+  </g>
+
+  <!-- 底部说明 -->
+  <rect x="80" y="440" width="640" height="48" rx="8" fill="#EEF2F7"/>
+  <text x="400" y="463" text-anchor="middle" font-size="14" font-weight="bold" fill="#1A1A2E">作用力 = 反作用力</text>
+  <text x="400" y="481" text-anchor="middle" font-size="13" fill="#555">机翼给空气向下的力 → 空气给机翼向上的升力（牛顿第三定律）</text>
+</svg>

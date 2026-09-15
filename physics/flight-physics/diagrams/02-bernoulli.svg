@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="900" height="600" fill="#FAFBFC" rx="12"/>
+
+  <text x="450" y="40" text-anchor="middle" font-size="22" font-weight="bold" fill="#1a1a2e">伯努利原理：机翼升力</text>
+
+  <!-- 机翼截面 -->
+  <g transform="translate(450,300)">
+    <!-- 翼型 -->
+    <path d="M -160,0 C -160,-40 -80,-70 0,-60 C 80,-50 140,-30 160,0 C 140,20 80,30 0,28 C -80,26 -160,15 -160,0 Z"
+          fill="#4A90D9" stroke="#2C5F8A" stroke-width="2.5"/>
+
+    <!-- 上表面气流线（快） -->
+    <g stroke="#E74C3C" stroke-width="2" fill="none" opacity="0.8">
+      <path d="M -180,-30 C -100,-80 0,-90 80,-70 C 130,-55 170,-40 200,-25" stroke-dasharray="8,4"/>
+      <path d="M -180,-50 C -100,-100 0,-110 80,-90 C 130,-75 170,-60 200,-45" stroke-dasharray="8,4"/>
+      <path d="M -180,-70 C -100,-120 0,-130 80,-110 C 130,-95 170,-80 200,-65" stroke-dasharray="8,4"/>
+    </g>
+    <!-- 上表面箭头 -->
+    <g fill="#E74C3C">
+      <polygon points="195,-30 205,-25 195,-20"/>
+      <polygon points="195,-50 205,-45 195,-40"/>
+      <polygon points="195,-70 205,-65 195,-60"/>
+    </g>
+
+    <!-- 下表面气流线（慢） -->
+    <g stroke="#2ECC71" stroke-width="2" fill="none" opacity="0.8">
+      <path d="M -180,20 C -100,10 0,5 80,10 C 130,15 170,20 200,25" stroke-dasharray="5,5"/>
+      <path d="M -180,40 C -100,30 0,25 80,30 C 130,35 170,40 200,45" stroke-dasharray="5,5"/>
+      <path d="M -180,60 C -100,50 0,45 80,50 C 130,55 170,60 200,65" stroke-dasharray="5,5"/>
+    </g>
+    <g fill="#2ECC71">
+      <polygon points="195,25 205,30 195,20"/>
+      <polygon points="195,45 205,50 195,40"/>
+      <polygon points="195,65 205,70 195,60"/>
+    </g>
+  </g>
+
+  <!-- 升力箭头 -->
+  <g stroke="#1A1A2E" stroke-width="5" fill="#1A1A2E">
+    <line x1="450" y1="140" x2="450" y2="200" stroke-linecap="round"/>
+    <polygon points="435,140 450,112 465,140"/>
+  </g>
+  <text x="450" y="100" text-anchor="middle" font-size="18" font-weight="bold" fill="#1A1A2E">升力 ↑</text>
+
+  <!-- 左侧标注 -->
+  <g transform="translate(70,180)">
+    <rect x="0" y="0" width="200" height="120" rx="10" fill="#FFF0F0" stroke="#E74C3C" stroke-width="1.5"/>
+    <text x="100" y="30" text-anchor="middle" font-size="14" font-weight="bold" fill="#E74C3C">上表面</text>
+    <line x1="20" y1="45" x2="180" y2="45" stroke="#E74C3C" stroke-width="2" stroke-dasharray="8,4"/>
+    <text x="100" y="68" text-anchor="middle" font-size="13" fill="#555">气流速度快</text>
+    <text x="100" y="88" text-anchor="middle" font-size="13" fill="#555">压强低</text>
+    <text x="100" y="108" text-anchor="middle" font-size="11" fill="#999">Fast · Low Pressure</text>
+  </g>
+
+  <g transform="translate(70,320)">
+    <rect x="0" y="0" width="200" height="120" rx="10" fill="#F0FFF4" stroke="#2ECC71" stroke-width="1.5"/>
+    <text x="100" y="30" text-anchor="middle" font-size="14" font-weight="bold" fill="#2ECC71">下表面</text>
+    <line x1="20" y1="45" x2="180" y2="45" stroke="#2ECC71" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="100" y="68" text-anchor="middle" font-size="13" fill="#555">气流速度慢</text>
+    <text x="100" y="88" text-anchor="middle" font-size="13" fill="#555">压强高</text>
+    <text x="100" y="108" text-anchor="middle" font-size="11" fill="#999">Slow · High Pressure</text>
+  </g>
+
+  <!-- 右侧公式 -->
+  <g transform="translate(660,180)">
+    <rect x="0" y="0" width="220" height="260" rx="10" fill="#F8F9FA" stroke="#DEE2E6" stroke-width="1.5"/>
+    <text x="110" y="30" text-anchor="middle" font-size="14" font-weight="bold" fill="#1A1A2E">伯努利方程</text>
+    <text x="110" y="70" text-anchor="middle" font-size="16" font-weight="bold" fill="#1A1A2E" font-family="Cambria Math">P + ½ρv² + ρgh = 常数</text>
+    <line x1="20" y1="90" x2="200" y2="90" stroke="#DEE2E6"/>
+    <text x="110" y="118" text-anchor="middle" font-size="13" fill="#555">P = 压强 (Pa)</text>
+    <text x="110" y="140" text-anchor="middle" font-size="13" fill="#555">ρ = 空气密度</text>
+    <text x="110" y="162" text-anchor="middle" font-size="13" fill="#555">v = 气流速度</text>
+    <line x1="20" y1="182" x2="200" y2="182" stroke="#DEE2E6"/>
+    <text x="110" y="210" text-anchor="middle" font-size="13" font-weight="bold" fill="#E74C3C">速度↑ → 压强↓</text>
+    <text x="110" y="232" text-anchor="middle" font-size="13" font-weight="bold" fill="#2ECC71">压强差 → 升力</text>
+    <text x="110" y="252" text-anchor="middle" font-size="11" fill="#999">v ↑ → P ↓ → Lift</text>
+  </g>
+
+  <!-- 底部结论 -->
+  <rect x="80" y="520" width="740" height="50" rx="8" fill="#EEF2F7"/>
+  <text x="450" y="545" text-anchor="middle" font-size="15" fill="#1A1A2E">上下表面压强差产生向上的净力 = 升力</text>
+  <text x="450" y="563" text-anchor="middle" font-size="13" fill="#555">Pressure difference between upper and lower surfaces = Lift</text>
+</svg>

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="900" height="400" fill="#FAFBFC" rx="12"/>
+
+  <text x="450" y="35" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a2e">矢量喷管：起飞 / 巡航切换</text>
+
+  <!-- 起飞模式 -->
+  <g transform="translate(250,210)">
+    <text x="0" y="-130" text-anchor="middle" font-size="16" font-weight="bold" fill="#2ECC71">起飞模式 (Vertical Take-off)</text>
+
+    <!-- 机身（俯视简化） -->
+    <path d="M -30,-90 L 30,-90 L 50,-60 L 70,0 L 50,50 L 30,80 L -30,80 L -50,50 L -70,0 L -50,-60 Z"
+          fill="#4A90D9" stroke="#2C5F8A" stroke-width="2"/>
+    <text x="0" y="15" text-anchor="middle" font-size="13" fill="#fff" font-weight="bold">机身</text>
+
+    <!-- 四个向下喷管 -->
+    <g fill="#E74C3C" stroke="#C0392B" stroke-width="1.5">
+      <rect x="-35" y="80" width="16" height="22" rx="3"/>
+      <rect x="19" y="80" width="16" height="22" rx="3"/>
+      <rect x="-35" y="-102" width="16" height="22" rx="3"/>
+      <rect x="19" y="-102" width="16" height="22" rx="3"/>
+    </g>
+
+    <!-- 四向向下气流 -->
+    <g stroke="#E74C3C" stroke-width="2.5" fill="#E74C3C">
+      <path d="M -27,102 L -27,150" stroke-dasharray="4,3"/>
+      <polygon points="-32,145 -27,160 -22,145"/>
+      <path d="M 27,102 L 27,150" stroke-dasharray="4,3"/>
+      <polygon points="22,145 27,160 32,145"/>
+      <path d="M -27,-102 L -27,-160" stroke-dasharray="4,3"/>
+      <polygon points="-32,-155 -27,-170 -22,-155"/>
+      <path d="M 27,-102 L 27,-160" stroke-dasharray="4,3"/>
+      <polygon points="22,-155 27,-170 32,-155"/>
+    </g>
+
+    <text x="0" y="180" text-anchor="middle" font-size="13" fill="#555">四具喷管向下 → 合力向上</text>
+  </g>
+
+  <line x1="450" y1="50" x2="450" y2="360" stroke="#DEE2E6" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- 巡航模式 -->
+  <g transform="translate(650,210)">
+    <text x="0" y="-130" text-anchor="middle" font-size="16" font-weight="bold" fill="#4A90D9">巡航模式 (Cruise)</text>
+
+    <path d="M -30,-90 L 30,-90 L 50,-60 L 70,0 L 50,50 L 30,80 L -30,80 L -50,50 L -70,0 L -50,-60 Z"
+          fill="#4A90D9" stroke="#2C5F8A" stroke-width="2"/>
+    <text x="0" y="15" text-anchor="middle" font-size="13" fill="#fff" font-weight="bold">机身</text>
+
+    <!-- 两个向后喷管 -->
+    <g fill="#4A90D9" stroke="#2C5F8A" stroke-width="1.5">
+      <rect x="-50" y="-25" width="22" height="16" rx="3"/>
+      <rect x="-50" y="9" width="22" height="16" rx="3"/>
+    </g>
+
+    <!-- 向后气流 -->
+    <g stroke="#4A90D9" stroke-width="3" fill="#4A90D9">
+      <path d="M -50,-17 L -180,-17" stroke-dasharray="4,3"/>
+      <polygon points="-175,-25 -195,-17 -175,-9"/>
+      <path d="M -50,17 L -180,17" stroke-dasharray="4,3"/>
+      <polygon points="-175,9 -195,17 -175,25"/>
+    </g>
+
+    <text x="0" y="180" text-anchor="middle" font-size="13" fill="#555">喷管向前转 → 水平推力 → 固定翼飞行</text>
+  </g>
+
+  <rect x="80" y="365" width="740" height="30" rx="8" fill="#EEF2F7"/>
+  <text x="450" y="384" text-anchor="middle" font-size="13" fill="#1A1A2E">喷管旋转 180°：垂直向下起飞 → 水平向前巡航，一台飞机两种飞行模式</text>
+</svg>
