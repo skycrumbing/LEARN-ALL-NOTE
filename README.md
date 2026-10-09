@@ -6,10 +6,10 @@
 
 | 目录 | 学科 | 当前状态 |
 |------|------|----------|
-| [`computer/`](computer/README.md) | 计算机科学 | 🟡 16 个主题，IO + Netty + 线程池 + Tomcat/WebFlux + GC + 红黑树 + 连接池 + Spring + 计算机视觉 |
-| [`math/`](math/README.md) | 数学 | ⚪ 待开始 |
+| `computer/` | 计算机科学 | 🟡 20 个主题，体系结构 + IO + Netty + 线程池 + GC + 数据结构 + Redis + MySQL + Spring + 计算机视觉 + 通信/信号处理 |
+| [`math/`](math/README.md) | 数学 | 🟡 3 个主题，泰勒展开 + 复数 + 线性代数 |
 | [`network/`](network/README.md) | 网络 | 🟢 3 个主题，核心内容已完成 |
-| [`physics/`](physics/README.md) | 物理 | 🟢 1 个主题，飞行原理已完成 |
+| [`physics/`](physics/README.md) | 物理 | 🟢 3 个主题，飞行原理 + 机械结构 + 家用电 |
 
 ---
 
@@ -111,6 +111,12 @@
 |------|------|------|
 | [`redis-analysis.md`](computer/redis/redis-analysis.md) | Redis 数据存储、分布式锁、IO 模型、最佳实践、常见问题 | ✅ |
 
+#### MySQL ([`→`](computer/mysql/README.md))
+
+| 笔记 | 说明 | 状态 |
+|------|------|------|
+| [`mysql-guide.md`](computer/mysql/mysql-guide.md) | MySQL 全面学习指南：数据存储 / 排序 / 事务 / 一致性 / 查询优化 / 死锁实战 | ✅ |
+
 #### Java 线程池 ([`→`](computer/thread-pool/README.md))
 
 | 笔记 | 说明 | 状态 |
@@ -154,12 +160,20 @@
 | [`transaction.md`](computer/spring/transaction.md) | @Transactional 调用链、Connection 绑定 ThreadLocal、7 种失效场景根因 | ✅ |
 | [`design-patterns.md`](computer/spring/design-patterns.md) | Spring 用到的 11 种设计模式盘点、综合学习收获 | ✅ |
 
-#### 系统设计（实战）
+#### 系统设计（实战） ([`→`](computer/system-design/README.md))
 
-| 笔记 | 说明 |
-|------|------|
-| [`系统设计方案.md`](computer/system-design/支付账户系统设计方案.md) | 支付账户系统设计 |
-| [`秒杀商城.md`](computer/system-design/秒杀商城.md) | 秒杀商城系统设计 |
+| 笔记 | 说明 | 状态 |
+|------|------|------|
+| [`payment-account-system.md`](computer/system-design/payment-account-system.md) | 支付账户系统设计 | ✅ |
+| [`seckill-mall.md`](computer/system-design/seckill-mall.md) | 秒杀商城系统设计 | ✅ |
+| [`iot-long-connection-architecture.md`](computer/system-design/iot-long-connection-architecture.md) | 物联网服务器架构：统一入口、DNS/L4 分流、LVS DR 模式、C10M、单元化 | ✅ |
+
+#### 数字通信与信号处理 ([`→`](computer/communications/README.md))
+
+| 笔记 | 说明 | 状态 |
+|------|------|------|
+| [`fft-digital-signal.md`](computer/communications/fft-digital-signal.md) | 无线信号→数字：采样、DFT、FFT 蝶形、WiFi/卫星 | ✅ |
+| [`convolution-theorem.md`](computer/communications/convolution-theorem.md) | 卷积定理：时域卷积=频域相乘、匹配滤波、OFDM 均衡 | ✅ |
 
 ---
 
@@ -187,7 +201,31 @@
 
 ### 📐 数学 (`math/`)
 
-> 待学习。计划覆盖：高等数学、线性代数、概率统计、离散数学。
+#### 泰勒展开 ([`→`](math/taylor-series/README.md))
+
+| 笔记 | 说明 | 状态 |
+|------|------|------|
+| [`taylor-expansion.md`](math/taylor-series/taylor-expansion.md) | 泰勒公式推导、收敛半径=到最近奇点距离、为什么 eˣ 处处可展开（整函数）而 1/(1-x)、arctan x 只在一段内有效、e^{-1/x²} 光滑但非解析、解析延拓 | ✅ |
+
+#### 复数与复平面 ([`→`](math/complex-numbers/README.md))
+
+| 笔记 | 说明 | 状态 |
+|------|------|------|
+| [`complex-numbers.md`](math/complex-numbers/complex-numbers.md) | 数系扩充、复数的加减乘除、复平面、共轭/模、极坐标与欧拉公式 e^{iθ}=cosθ+i sinθ、e^z 处处可导、串回泰勒收敛半径、FFT 应用 | ✅ |
+
+#### 线性代数 ([`→`](math/linear-algebra/README.md))
+
+| 笔记 | 说明 | 状态 |
+|------|------|------|
+| [`vectors-and-matrices.md`](math/linear-algebra/vectors-and-matrices.md) | 向量、矩阵=线性变换、矩阵乘法=复合、换基（含 DFT=换基） | ✅ |
+| [`linear-equations-rank.md`](math/linear-algebra/linear-equations-rank.md) | 方程组、列/零空间、秩、解的结构、最小二乘/伪逆 | ✅ |
+| [`determinant-inverse.md`](math/linear-algebra/determinant-inverse.md) | 行列式=体积缩放、逆矩阵=逆变换、Jacobian 局部缩放 | ✅ |
+| [`eigenvalues-eigenvectors.md`](math/linear-algebra/eigenvalues-eigenvectors.md) | 特征值/特征向量、对角化、循环矩阵被 DFT 对角化、模态分析 | ✅ |
+| [`svd.md`](math/linear-algebra/svd.md) | SVD=旋转-缩放-旋转、低秩近似、PCA、SVD 伪逆、Kabsch | ✅ |
+| [`orthogonal-unitary.md`](math/linear-algebra/orthogonal-unitary.md) | 正交/酉矩阵=保长度保角度、DFT 矩阵、Parseval、旋转矩阵 | ✅ |
+| [`linear-algebra-in-ml.md`](math/linear-algebra/linear-algebra-in-ml.md) | 全章收尾：最小二乘/协方差/卡尔曼三线合一 + 决策速查表 | ✅ |
+
+> 计划覆盖：高等数学、线性代数、概率统计、离散数学。
 
 ---
 
@@ -206,6 +244,12 @@
 | [`manual-transmission.md`](physics/mechanical/manual-transmission.md) | 手动变速箱：齿轮传动、扭矩/转速/功率守恒、低档力气大/高档速度快、换挡踩离合、起步半联动 | ✅ |
 | [`nanometer-precision.md`](physics/mechanical/nanometer-precision.md) | 芯片组装纳米级精度：普通机械臂为何到不了、测量—反馈—补偿闭环、四大支柱（低误差结构/微动/温控/隔振）、矩阵算法（齐次变换/最小二乘/单应SVD/状态空间/雅可比协方差） | ✅ |
 | [`nanometer-precision-math.md`](physics/mechanical/nanometer-precision-math.md) | 纳米级精度的矩阵推导姊妹篇：齐次变换、伪逆最小二乘、Kabsch/SVD、AX=XB 手眼标定、单应/DLT、LQR/里卡提、卡尔曼滤波、Σ_out=JΣJᵀ 误差传播、Kφ=ω²Mφ 模态、亚像素重心，逐条完整推导 | ✅ |
+
+#### 家用电知识
+
+| 笔记 | 说明 | 状态 |
+|------|------|------|
+| [`household-electricity.md`](physics/household-electricity.md) | 家庭用电：电压/电流/电阻、电场与变压器、串并联、安全用电、跳闸详解、选型速查 | ✅ |
 
 ---
 

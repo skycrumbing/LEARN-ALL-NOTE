@@ -21,7 +21,7 @@
 
 机翼截面（翼型）的形状是产生升力的关键：
 
-![翼型截面](diagrams/08-airfoil-section.svg)
+![翼型如何产生升力（动图）](diagrams/08-airfoil-lift.gif)
 
 ### 2.2 伯努利原理（Bernoulli's Principle）
 

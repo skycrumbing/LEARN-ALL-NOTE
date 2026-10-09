@@ -136,29 +136,128 @@ $$
 g(t) = L\big(a + t\,\Delta a,\ w + t\,\Delta w\big),\qquad g(0)=L(a,w),\ g(1)=L(a{+}\Delta a,w{+}\Delta w)
 $$
 
-$g(t)$ 是普通一元函数，对它用单变量泰勒：$g(1) = g(0) + g'(0) + \tfrac12 g''(0) + O(1)$。
+$g(t)$ 是普通一元函数，对它用**单变量泰勒展开**。展开点选 $t=0$：那里是"当前参数"（前向刚跑过），$g$ 的值、各阶导数全都算得出来；$t=1$ 是"更新后"，还没跑前向、一无所知。泰勒就是用 $t=0$ 的局部信息（高度+斜率+曲率）去**估计** $t=1$ 的值。
 
-**② 链式法则算 $g'(t)$（一阶项）**：$a$ 的变率是 $\Delta a$、$w$ 的是 $\Delta w$，各自贡献相加：
+**单变量泰勒公式（展开到二阶，带拉格朗日余项）**：
+
+$$
+g(t) = \underbrace{g(0) + g'(0)\,t + \tfrac12 g''(0)\,t^2}_{\text{前二阶近似}} + \underbrace{\frac{g'''(\xi)}{3!}\,t^3}_{\text{余项 }R_2},\qquad \xi\in(0,t)
+$$
+
+- 前三项：只用 $t=0$ 处的值、一阶导、二阶导，就能近似任意 $t$ 处的 $g$
+- 余项 $R_2$：真实函数与前二阶近似之间的误差，由"某个中间点 $\xi$ 的三阶导 $\times\, t^3$"刻画
+
+代入 $t=1$（步长 $h=1$，故 $1^1=1^2=1^3=1$）：
+
+$$
+g(1) = g(0) + g'(0)\cdot 1 + \tfrac12 g''(0)\cdot 1^2 + \frac{g'''(\xi)}{3!}\cdot 1^3
+$$
+
+**为什么本例余项恒为 0**：因为 $L=(1-(a+w))^2$ 是**二次函数**。代入直线参数化后（本例 $a=w=0$，$\Delta a+\Delta w=0.04$）：
+
+$$
+g(t) = \Big(1 - (a+w) - t(\Delta a+\Delta w)\Big)^2 = 1 - 0.08\,t + 0.0016\,t^2
+$$
+
+这是 $t$ 的**二次多项式**，三阶导 $g'''(t)\equiv 0$，所以 $R_2\equiv 0$——泰勒到二阶就**精确等于**原函数。用数字验证：$g(1)=1-0.08+0.0016=0.9216$，一分不差。**一般规律：$n$ 次多项式 = 它自己的 $n$ 阶泰勒展开**（更高阶项在多项式里不存在）。真实网络的 $L=-\ln p_y$ 不是二次的，余项不为 0——2.4 末尾实测表里那个随 $lr^2$ 缩小的"二阶余项"就是它。
+
+**② 链式法则算 $g'(t)$（一阶项）**——展开算一遍，别只记结论。
+
+先看结构：$g(t)$ 是**复合函数** $g(t)=L\big(a(t),w(t)\big)$，其中 $a(t)=a+t\Delta a$、$w(t)=w+t\Delta w$。$L$ 有两个输入，每个又都是 $t$ 的函数，所以要用**多元链式法则**——$t$ 动一点，既通过 $a(t)$ 影响 $L$、又通过 $w(t)$ 影响 $L$，两条路的贡献相加：
+
+$$
+g'(t) = \frac{\partial L}{\partial a}\,\frac{da}{dt} + \frac{\partial L}{\partial w}\,\frac{dw}{dt}
+$$
+
+算两个内层导数：
+
+$$
+\frac{da}{dt} = \frac{d}{dt}\big(a+t\Delta a\big) = \Delta a,\qquad \frac{dw}{dt} = \frac{d}{dt}\big(w+t\Delta w\big) = \Delta w
+$$
+
+代入：
 
 $$
 g'(t) = \frac{\partial L}{\partial a}\,\Delta a + \frac{\partial L}{\partial w}\,\Delta w
 $$
 
-**③ 再求导算 $g''(t)$**：注意 $\frac{\partial L}{\partial a}$、$\frac{\partial L}{\partial w}$ 本身也随 $t$ 变（它们依赖 $a,w$），逐项用链式法则：
+**代入本例数字**（$L=(1-(a+w))^2$，点 $(0,0)$，$\Delta a=\Delta w=0.02$）。先算偏导：设 $v=1-(a+w)$，则 $L=v^2$、$\frac{dv}{da}=-1$，由链式法则
 
 $$
-\frac{d}{dt}\big(\tfrac{\partial L}{\partial a}\,\Delta a\big) = \Big(\tfrac{\partial^2 L}{\partial a^2}\Delta a + \tfrac{\partial^2 L}{\partial a\partial w}\Delta w\Big)\Delta a = L_{aa}\,\Delta a^2 + L_{aw}\,\Delta a\,\Delta w
+\frac{\partial L}{\partial a} = \frac{dL}{dv}\frac{dv}{da} = 2v\cdot(-1) = -2(1-a-w) \quad\xrightarrow{\ (0,0)\ }\quad -2
+$$
+
+同理 $\frac{\partial L}{\partial w}=-2$。代回并取 $t=0$：
+
+$$
+g'(0) = (-2)(0.02) + (-2)(0.02) = -0.04 - 0.04 = \boxed{-0.08}
+$$
+
+**交叉验证**（直接对 $g(t)$ 求导，应得同一数）：$g(t)=\big(1-(a+w)-t(\Delta a+\Delta w)\big)^2$，其内层对 $t$ 求导为 $-(\Delta a+\Delta w)$，故
+
+$$
+g'(0) = -2(1-a-w)(\Delta a+\Delta w) = -2\times1\times0.04 = -0.08\ \checkmark
+$$
+
+两种算法殊途同归：**$g'(0)=-0.08$，正是 2.4 例子里"一阶项 $-0.0800$"的来源**。
+
+**③ 再求导算 $g''(t)$**——展开算一遍。起点是②的结论，对它再对 $t$ 求一次导：
+
+$$
+g'(t) = \frac{\partial L}{\partial a}\Delta a + \frac{\partial L}{\partial w}\Delta w
+\qquad\Longrightarrow\qquad
+g''(t) = \frac{d}{dt}\Big[\frac{\partial L}{\partial a}\Delta a\Big] + \frac{d}{dt}\Big[\frac{\partial L}{\partial w}\Delta w\Big]
+$$
+
+**先算第一项**。$\frac{\partial L}{\partial a}\,\Delta a$ 是"函数 × 常数"：$\Delta a$ 不随 $t$ 变，提到导数外面；而 $\frac{\partial L}{\partial a}$ 本身依赖 $a(t),w(t)$，是**复合函数，还要再用一次多元链式法则**：
+
+$$
+\frac{d}{dt}\Big[\frac{\partial L}{\partial a}\Delta a\Big] = \Big[\frac{d}{dt}\Big(\frac{\partial L}{\partial a}\Big)\Big]\Delta a
 $$
 
 $$
-\frac{d}{dt}\big(\tfrac{\partial L}{\partial w}\,\Delta w\big) = L_{wa}\,\Delta w\,\Delta a + L_{ww}\,\Delta w^2
+\frac{d}{dt}\Big(\frac{\partial L}{\partial a}\Big) = \frac{\partial^2 L}{\partial a^2}\underbrace{\frac{da}{dt}}_{\Delta a} + \frac{\partial^2 L}{\partial a\,\partial w}\underbrace{\frac{dw}{dt}}_{\Delta w} = \frac{\partial^2 L}{\partial a^2}\Delta a + \frac{\partial^2 L}{\partial a\,\partial w}\Delta w
 $$
 
-合起来：
+所以：
 
 $$
-g''(t) = L_{aa}\,\Delta a^2 + \big(L_{aw} + L_{wa}\big)\Delta a\,\Delta w + L_{ww}\,\Delta w^2
+\frac{d}{dt}\Big[\frac{\partial L}{\partial a}\Delta a\Big] = \Big(\frac{\partial^2 L}{\partial a^2}\Delta a + \frac{\partial^2 L}{\partial a\,\partial w}\Delta w\Big)\Delta a = L_{aa}\,\Delta a^2 + L_{aw}\,\Delta a\,\Delta w
 $$
+
+**第二项完全对称**（$\frac{\partial L}{\partial w}$ 也是复合函数）：
+
+$$
+\frac{d}{dt}\Big[\frac{\partial L}{\partial w}\Delta w\Big] = \Big(\frac{\partial^2 L}{\partial w\,\partial a}\Delta a + \frac{\partial^2 L}{\partial w^2}\Delta w\Big)\Delta w = L_{wa}\,\Delta w\,\Delta a + L_{ww}\,\Delta w^2
+$$
+
+**两项相加**：
+
+$$
+g''(t) = L_{aa}\,\Delta a^2 + \big(L_{aw}+L_{wa}\big)\Delta a\,\Delta w + L_{ww}\,\Delta w^2
+$$
+
+**代入本例数字验证**（$L=(1-(a+w))^2$，点 $(0,0)$，$\Delta a=\Delta w=0.02$）。先算二阶偏导（对②算出的 $-2(1-a-w)$ 再求导）：
+
+$$
+\frac{\partial^2 L}{\partial a^2} = \frac{\partial}{\partial a}\big[-2(1-a-w)\big] = 2,\qquad
+\frac{\partial^2 L}{\partial w^2} = 2,\qquad
+\frac{\partial^2 L}{\partial a\,\partial w} = \frac{\partial^2 L}{\partial w\,\partial a} = 2
+$$
+
+代入：
+
+$$
+g'' = 2\times0.0004 + (2+2)\times0.0004 + 2\times0.0004 = 0.0008 + 0.0016 + 0.0008 = \boxed{0.0032}
+$$
+
+**交叉验证**（直接对 $g(t)$ 求两次导）：$g(t)=(1-0.04t)^2$，则 $g'(t)=-0.08(1-0.04t)$，再导得
+
+$$
+g''(t) = 0.0032\ \checkmark
+$$
+
+三种说法（逐项展开 / 数值代入 / 直接求导）得到同一个 $0.0032$——这就是 2.4 例子里"二阶合计 $0.0016 = \tfrac12 g''$"的来源。
 
 **④ 那个"2"的来历**：对光滑函数两种混合偏导顺序相等（克莱罗定理）$L_{aw}=L_{wa}$，所以交叉项系数是 $2$：
 

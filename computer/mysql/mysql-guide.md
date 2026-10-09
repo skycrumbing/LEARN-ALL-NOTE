@@ -1590,6 +1590,149 @@ SELECT * FROM user WHERE id > 1000000 ORDER BY id LIMIT 10;
 
 ---
 
+## 六、实战案例：设备激活 1213 死锁（短事务 + RC 隔离）
+
+> 把「事务 / 隔离级别 / 锁机制」的理论落到真实生产问题：
+> 并发创建设备触发 MySQL 1213 死锁，最终方案 = **短事务 + READ COMMITTED（去行锁）**。
+
+### 6.1 背景
+
+```
+问题场景：不同设备、同一产品并发创建设备。
+
+  device 表存在非唯一索引：device_indexs(product_key, device_name)
+
+  并发执行「查重 → 插入」时，该索引上的间隙锁发生 S → X 升级，
+  导致 MySQL 错误 1213（死锁）。
+
+  Redis 锁（按设备名）只能拦住「同一设备名」，拦不住「不同设备」。
+
+用户诉求：
+  ① 并发很大 → 不要按产品串行化（去掉行锁）
+  ② 不要死锁重试
+```
+
+### 6.2 死锁根因：S 间隙锁 → X 升级
+
+```
+在 RR（可重复读）隔离级别下，查重 SELECT 会走 Next-Key Lock（间隙锁 + 行锁）：
+
+  两个事务同时对同一间隙加锁：
+
+    事务 A：SELECT ... FOR UPDATE WHERE product_key = ? AND device_name = ?
+      → 对 device_indexs 索引的间隙持有 S（共享）间隙锁
+
+    事务 B：同样执行
+      → 对同一间隙持有 S 间隙锁
+
+    事务 A：INSERT ...
+      → 需要把 S 间隙锁升级为 X（写）锁
+      → 但间隙已被 B 的 S 锁占用 → A 阻塞等待 B
+
+    事务 B：INSERT ...
+      → 同样需要升级 X → 被 A 的 S 锁阻塞
+
+  结果：A 等 B、B 等 A → 死锁 → InnoDB 检测到后回滚一方 → 报 1213
+```
+
+```
+什么是「同一间隙」？—— 用具体索引布局解释
+
+  device_indexs(product_key, device_name) 是二级索引，
+  叶子节点按 (product_key, device_name) 排序存储：
+
+    索引叶子已有记录：
+      (P1, dev_005)  (P1, dev_010)  (P1, dev_015)  (P1, dev_020)
+
+    相邻两条记录之间的「空隙」就是一个间隙（Gap）：
+
+      (P1,dev_005) → (P1,dev_010)  → 间隙 G1
+      (P1,dev_010) → (P1,dev_015)  → 间隙 G2
+      (P1,dev_015) → (P1,dev_020)  → 间隙 G3
+      (P1,dev_020) → (+∞)          → 间隙 G4
+
+  并发创建两个「不同设备」：
+    设备 dev_012 → 会插入到 G2（dev_010 与 dev_015 之间）
+    设备 dev_013 → 也会插入到 G2（同一个间隙！）
+
+  → 两个事务的查重 SELECT（RR 下）都在 G2 上加了 S 间隙锁
+  → 各自的 INSERT 都落在 G2 → 都要把 G2 的 S 锁升级为 X 锁
+  → 互相等待 → 死锁
+
+  对比：若并发设备落在不同间隙（如 dev_012 → G2、dev_017 → G3），
+  锁的是不同间隙 → 不会互相阻塞 → 不会死锁。
+
+  ⚠️ 关键认识：
+    问题不是「同一设备名」，而是「落点落在同一间隙的不同设备」。
+    product_key 相同 + device_name 相邻 → 极易落在同一间隙。
+```
+
+```
+关键点：间隙锁 / Next-Key Lock 只在 RR（及以上）隔离级别产生。
+
+  RC 下非锁定读（SELECT 查重）不加任何锁；
+  INSERT 的插入意向锁互相兼容。
+  → 并发 check-then-insert 不冲突。
+```
+
+### 6.3 最终方案：短事务 + RC 隔离
+
+```
+在「方案 3 短事务重构」基础上：
+  ① createLocal 短事务隔离级别改为 READ COMMITTED
+
+→ 全并发、无死锁、无重试。
+```
+
+### 6.4 原理（已与用户多轮确认）
+
+```
+① 间隙锁只在 RR 隔离产生；RC 下非锁定读（SELECT 查重）不加间隙锁；
+   INSERT 的插入意向锁互相兼容 → 并发插入不冲突。
+② device 索引为非唯一，RC 下无「唯一键重复检查」的间隙锁残留。
+③ 隔离级别只作用于 createLocal 这一个 REQUIRES_NEW 短事务，
+   不影响全库其他逻辑。
+④ 主键点 UPDATE（saveDeviceAllFields、increaseDeviceCount）本身无间隙锁，天然安全。
+```
+
+**1. DeviceLocalCreateService.java**
+
+```java
+// 增加隔离级别：REQUIRES_NEW 短事务 + READ_COMMITTED
+@Transactional(propagation = Propagation.REQUIRES_NEW, isolation = Isolation.READ_COMMITTED)
+public Device createLocal(Device device, String productId, DeviceVo vo, String iotInstance, boolean inStock) {}
+```
+
+
+
+### 6.6 并发 / 死锁效果
+
+| 指标 | 结果 |
+|---|---|
+| 同产品并发创建 | 全并发（无排队、无串行） |
+| 死锁（1213） | 消除（RC 无间隙锁） |
+| 失败 | 无（无需重试） |
+| deviceCount | 原子递增，无丢失更新 |
+| 调用模式 | create()/各调用方不变，HTTP 端点不变 |
+
+### 6.7 注意事项
+
+```
+① 同设备名并发直连 create()：
+   RC 下查重为一致读，极端并发同名单可能插重（无唯一约束，与历史行为一致，
+   active() 路径由 Redis ACTIVE_LOCK 兜底）。如需彻底防重，后续可考虑
+   (product_key, device_name) 唯一索引（需先清理历史重复数据）。
+
+② 未来隐患：
+   若新增按 device_name 等二级索引的范围 UPDATE/DELETE，RC 下仍需注意
+   （范围写操作在 RC 也会锁匹配记录），但主键点操作天然安全。
+
+③ REQUIRES_NEW 占第二个连接池连接：
+   高并发时评估连接池大小。
+```
+
+---
+
 ## 附录：知识体系总览
 
 ```
@@ -1623,4 +1766,7 @@ MySQL 核心知识树：
 ├── JOIN 优化（驱动表选择、被驱动表索引）
 ├── 慢查询（日志、分析、优化）
 └── 分页优化（延迟关联、游标法）
+
+实战案例
+└── 设备激活 1213 死锁（短事务 + RC 隔离，去行锁）
 ```

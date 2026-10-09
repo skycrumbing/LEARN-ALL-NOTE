@@ -1,9 +1,9 @@
-# ── 只跟踪 .md / .java / .gitignore 文件 ──
+# ── 只跟踪 .md / .java / .py / .gitignore 文件 ──
 
 # 忽略所有文件
 *
 
-# 恢复目录遍历（否则子目录里的.md/.java也看不到）
+# 恢复目录遍历（否则子目录里的 .md/.java/.py 也看不到）
 !*/
 
 # 恢复 .gitignore
@@ -12,6 +12,20 @@
 # 只保留 .md 和 .java
 !*.md
 !*.java
+
+!*.png
+!*.gif
+!*.svg
+
+# 计算机视觉配套代码（Python + 依赖清单）
+!*.py
+!requirements.txt
+
+# 运行生成的产物不入库：模型权重、输出图、Python 缓存
+**/models/
+**/output/
+**/yolov8*.pt
+**/__pycache__/
 
 # 明确忽略 IDE 配置目录和文件
 .idea/
