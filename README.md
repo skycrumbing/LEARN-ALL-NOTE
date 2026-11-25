@@ -7,7 +7,7 @@
 | 目录 | 学科 | 当前状态 |
 |------|------|----------|
 | `computer/` | 计算机科学 | 🟡 20 个主题，体系结构 + IO + Netty + 线程池 + GC + 数据结构 + Redis + MySQL + Spring + 计算机视觉 + 通信/信号处理 |
-| [`math/`](math/README.md) | 数学 | 🟡 3 个主题，泰勒展开 + 复数 + 线性代数 |
+| [`math/`](math/README.md) | 数学 | 🟡 5 个主题，泰勒展开 + 复数 + 线性代数 + 统计推断 + 信息论 |
 | [`network/`](network/README.md) | 网络 | 🟢 3 个主题，核心内容已完成 |
 | [`physics/`](physics/README.md) | 物理 | 🟢 3 个主题，飞行原理 + 机械结构 + 家用电 |
 
@@ -167,6 +167,8 @@
 | [`payment-account-system.md`](computer/system-design/payment-account-system.md) | 支付账户系统设计 | ✅ |
 | [`seckill-mall.md`](computer/system-design/seckill-mall.md) | 秒杀商城系统设计 | ✅ |
 | [`iot-long-connection-architecture.md`](computer/system-design/iot-long-connection-architecture.md) | 物联网服务器架构：统一入口、DNS/L4 分流、LVS DR 模式、C10M、单元化 | ✅ |
+| [`sso-design.md`](computer/system-design/sso-design.md) | 单点登录（SSO）系统设计：认证/授权分离、统一账号、每系统独立 RBAC、用户创建 | ✅ |
+| [`oa-workflow-system.md`](computer/system-design/oa-workflow-system.md) | OA 流程系统（审批工作流）设计：三层分离、会签完成度算法、BPMN、超时处理 | ✅ |
 
 #### 数字通信与信号处理 ([`→`](computer/communications/README.md))
 
@@ -224,6 +226,25 @@
 | [`svd.md`](math/linear-algebra/svd.md) | SVD=旋转-缩放-旋转、低秩近似、PCA、SVD 伪逆、Kabsch | ✅ |
 | [`orthogonal-unitary.md`](math/linear-algebra/orthogonal-unitary.md) | 正交/酉矩阵=保长度保角度、DFT 矩阵、Parseval、旋转矩阵 | ✅ |
 | [`linear-algebra-in-ml.md`](math/linear-algebra/linear-algebra-in-ml.md) | 全章收尾：最小二乘/协方差/卡尔曼三线合一 + 决策速查表 | ✅ |
+
+#### 统计推断 ([`→`](math/statistical-inference/README.md))
+
+| 笔记 | 说明 | 状态 |
+|------|------|------|
+| [`probability-distributions.md`](math/statistical-inference/probability-distributions.md) | 概率分布地基：离散vs连续、伯努利/二项/均匀/泊松/正态、期望方差速查、参数即"旋钮" | ✅ |
+| [`mle.md`](math/statistical-inference/mle.md) | 最大似然估计：抛硬币问题→似然→连乘→对数→求导、伯努利/正态推导、串回交叉熵与 MSE | ✅ |
+| [`bayesian-inference.md`](math/statistical-inference/bayesian-inference.md) | 贝叶斯推断：先验×似然→后验、共轭先验（贝塔）、MAP、MLE⊂MAP⊂贝叶斯 | ✅ |
+| [`hypothesis-testing.md`](math/statistical-inference/hypothesis-testing.md) | 假设检验：p 值正确读法、α、两类错误、置信区间、五个翻车坑 | ✅ |
+
+#### 信息论 ([`→`](math/information-theory/README.md))
+
+| 笔记 | 说明 | 状态 |
+|------|------|------|
+| [`information-theory.md`](math/information-theory/information-theory.md) | 信息论入门：信息量→熵→交叉熵→KL 散度，串回 MLE 与神经网络 loss | ✅ |
+| [`conditional-entropy-mutual-information.md`](math/information-theory/conditional-entropy-mutual-information.md) | 条件熵→互信息：`I(X;Y)=H(X)−H(X\|Y)=KL(P_xy‖P_x·P_y)`，串回决策树/特征选择 | ✅ |
+| [`data-compression-shannon-coding.md`](math/information-theory/data-compression-shannon-coding.md) | 数据压缩：高频给短码、前缀码、霍夫曼贪心树/香农-范诺，熵=压缩下限 | ✅ |
+| [`differential-entropy.md`](math/information-theory/differential-entropy.md) | 连续熵与微分熵：`∫f·(-log f)`、连续推广、正态最大熵原理，串回 PCA/降维 | ✅ |
+| [`loss-family-information-theory.md`](math/information-theory/loss-family-information-theory.md) | 信息论收尾：MSE/交叉熵/KL 统一为"分布间距离 / 猜错代价" | ✅ |
 
 > 计划覆盖：高等数学、线性代数、概率统计、离散数学。
 
